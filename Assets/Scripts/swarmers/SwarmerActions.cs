@@ -8,7 +8,7 @@ public class SwarmerActions : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		swarmer = GetComponent<Swarmer>();
+		swarmer = GetComponentInParent<Swarmer>();
 		if (!swarmer)
 			Debug.Log(string.Format("{0} is lacking its swarmer!", gameObject));
 	}

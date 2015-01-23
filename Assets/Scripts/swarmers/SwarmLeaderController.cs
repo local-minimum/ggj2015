@@ -19,6 +19,7 @@ public class SwarmLeaderController : Singleton<SwarmLeaderController> {
 			Vector2 force = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 			_leader.AddForceLeader(force * Time.deltaTime * forceFactor);
 		}
+
 	}
 
 	public static void SetLeader(Swarmer usurper) {

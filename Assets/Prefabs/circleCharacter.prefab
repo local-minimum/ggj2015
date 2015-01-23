@@ -26,9 +26,9 @@ GameObject:
   - 4: {fileID: 430192}
   - 212: {fileID: 21230192}
   - 58: {fileID: 5830190}
-  - 50: {fileID: 5030192}
   - 114: {fileID: 11430192}
-  - 114: {fileID: 11451418}
+  - 50: {fileID: 5036212}
+  - 114: {fileID: 11436212}
   m_Layer: 0
   m_Name: circleCharacter
   m_TagString: Untagged
@@ -61,14 +61,14 @@ Transform:
   - {fileID: 417562}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5030192
+--- !u!50 &5036212
 Rigidbody2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130192}
   m_Mass: 1
-  m_LinearDrag: .100000001
+  m_LinearDrag: .25
   m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_FixedAngle: 0
@@ -96,7 +96,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Radius: .5
+  m_Radius: .75
   m_Center: {x: 0, y: 0}
 --- !u!114 &11430192
 MonoBehaviour:
@@ -111,7 +111,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SwarmerType: 1
   forceFactor: 1
---- !u!114 &11451418
+  wobbleFrequency: 1
+  wobbleAmplitude: 1
+  followerAnticipationForce: .5
+--- !u!114 &11436212
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
