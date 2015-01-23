@@ -51,7 +51,7 @@ public class Swarmer : MonoBehaviour {
 		Vector2 relativeVector = transform.position - leader.transform.position;
 		float angleFactor = -1 * Vector2.Dot(force.normalized, relativeVector.normalized);
 		angleFactor += 0.5f;
-		angleFactor = Mathf.Min(0, angleFactor);
+		angleFactor = Mathf.Clamp(angleFactor, 0, 1.1f);
 		Debug.Log(angleFactor);
 		rigidbody2D.AddForce(force * angleFactor * forceFactor);
 //		Debug.DrawRay(transform.position, force.normalized, Color.cyan, force.magnitude * forceFactor * angleFactor);
