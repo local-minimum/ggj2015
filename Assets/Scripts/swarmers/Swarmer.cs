@@ -17,6 +17,9 @@ public class Swarmer : MonoBehaviour {
 
 	public float wobbleAmplitude;
 
+	public ParticleSystem leaderEffect;
+	public ParticleSystem followerEffect;
+
 	[Range(0, 1)]
 	public float followerAnticipationForce = 0.4f;
 
@@ -36,7 +39,31 @@ public class Swarmer : MonoBehaviour {
 	}
 
 	void Update() {
+		LeaderEffect();
+		FollowerEffect();
+	}
 
+	void LeaderEffect() {
+		bool isLeader = SwarmLeaderController.IsLeader(this);
+		if (leaderEffect.isPlaying != isLeader) {
+			if (isLeader)
+				leaderEffect.Play();
+			else
+				leaderEffect.Stop();
+		}
+	}
+
+	void FollowerEffect() {
+		if (!SwarmLeaderController.Leader)
+			return;
+
+		bool isFollower = SwarmLeaderController.Leader.isInSwarm(this) && rigidbody2D.velocity.magnitude > 0.25f;
+		if (followerEffect.isPlaying != isFollower) {
+			if (isFollower)
+				followerEffect.Play();
+			else
+				followerEffect.Stop();
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -62,6 +89,10 @@ public class Swarmer : MonoBehaviour {
 
 	public Vector2 wobble(Vector2 force) {
 		return Mathf.Sin(wobbleSeed + Level.timeSinceLevelStart * wobbleFrequency) * wobbleAmplitude * force.normalized + force;
+	}
+
+	public bool isInSwarm(Swarmer swarmer) {
+		return swarm.Contains(swarmer);
 	}
 
 	public void AddForceFollower(Vector2 force, Swarmer leader) {

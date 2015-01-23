@@ -7,6 +7,7 @@ public class SwarmLeaderController : Singleton<SwarmLeaderController> {
 	public float forceFactor = 1f;
 
 	public Swarmer leader {get { return _leader;}}
+	public static Swarmer Leader {get { return Instance._leader;}}
 
 	// Use this for initialization
 	void Start () {
