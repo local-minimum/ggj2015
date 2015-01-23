@@ -17,7 +17,7 @@ public class SwarmLeaderController : Singleton<SwarmLeaderController> {
 	void Update () {
 		if (_leader) {
 			Vector2 force = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-			_leader.AddForce(force * Time.deltaTime * forceFactor);
+			_leader.AddForceLeader(force * Time.deltaTime * forceFactor);
 		}
 	}
 

@@ -7,19 +7,19 @@ public class Swarmer : MonoBehaviour {
 
 	public SwarmerTypes SwarmerType;
 
-	private HashSet<GameObject> neighbours = new HashSet<GameObject>();
+	private HashSet<Swarmer> swarm = new HashSet<Swarmer>();
 
 	public float forceFactor = 1f;
 
 	public int NumberOfNeighbours {
 		get {
-			return neighbours.Count;
+			return swarm.Count;
 		}
 	}
 
-	public bool isSameSwarmerType(GameObject other) {
+	public Swarmer isSameSwarmerType(Collider2D other) {
 		Swarmer otherSwarmer = other.GetComponent<Swarmer>();
-		return otherSwarmer && otherSwarmer.SwarmerType == SwarmerType;
+		return otherSwarmer && otherSwarmer.SwarmerType == SwarmerType ? otherSwarmer : null;
 	}
 
 	void Update() {
@@ -27,27 +27,24 @@ public class Swarmer : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (isSameSwarmerType(other.gameObject)) {
-			neighbours.Add(other.gameObject);
-		}
+		Swarmer swarmer = isSameSwarmerType(other);
+		if (swarmer)
+			swarm.Add(swarmer);
+
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
-		if (isSameSwarmerType(other.gameObject))
-			neighbours.Remove(other.gameObject);
+		Swarmer swarmer = isSameSwarmerType(other);
+		if (swarmer)
+			swarm.Remove(swarmer);
 	}
-
-	public void AddForce(Vector2 force) {
-		if (SwarmLeaderController.IsLeader(this))
-		    AddForceLeader(force);
-		else
-			AddForceFollower(force, this);
-		
-	}
+	
 
 	public void AddForceLeader(Vector2 force) {
 		rigidbody2D.AddForce(force * forceFactor);
-//		Debug.DrawRay(transform.position, force.normalized, Color.green, force.magnitude * forceFactor);
+
+		foreach (Swarmer swarmer in swarm)
+			swarmer.AddForceFollower(force, this);
 	}
 
 	public void AddForceFollower(Vector2 force, Swarmer leader) {
@@ -55,6 +52,7 @@ public class Swarmer : MonoBehaviour {
 		float angleFactor = -1 * Vector2.Dot(force.normalized, relativeVector.normalized);
 		angleFactor += 0.5f;
 		angleFactor = Mathf.Min(0, angleFactor);
+		Debug.Log(angleFactor);
 		rigidbody2D.AddForce(force * angleFactor * forceFactor);
 //		Debug.DrawRay(transform.position, force.normalized, Color.cyan, force.magnitude * forceFactor * angleFactor);
 	}
