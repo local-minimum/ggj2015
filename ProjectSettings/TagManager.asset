@@ -37,7 +37,19 @@ TagManager:
   User Layer 30: 
   User Layer 31: 
   m_SortingLayers:
+  - name: Skin
+    userID: 1
+    uniqueID: 1469402527
+    locked: 0
   - name: Default
     userID: 0
     uniqueID: 0
+    locked: 0
+  - name: Decor
+    userID: 2
+    uniqueID: 2004676157
+    locked: 0
+  - name: Characters
+    userID: 3
+    uniqueID: 154915995
     locked: 0
