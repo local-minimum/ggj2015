@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="New document 1">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="11.2"
+     inkscape:cx="94.847914"
+     inkscape:cy="1013.6445"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4;stroke-opacity:1"
+       id="rect2985"
+       width="26.785711"
+       height="26.785711"
+       x="20.714285"
+       y="20.933611"
+       inkscape:export-filename="D:\UserMartin\Documents\Game Projects\GGJ2015\Assets\Sprites\Placeholders\square.png"
+       inkscape:export-xdpi="233.90863"
+       inkscape:export-ydpi="233.90863" />
+    <path
+       style="fill:#00ffff;stroke:#000000;stroke-width:3.77830005;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 100.78535,48.586306 -31.570694,0 16.103171,-31.555398 z"
+       id="path2987"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="239.00415"
+       inkscape:export-ydpi="239.00415"
+       inkscape:export-filename="D:\UserMartin\Documents\Game Projects\GGJ2015\Assets\Sprites\Placeholders\triangle.png" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:#1a1a1a;stroke-width:4;stroke-opacity:1"
+       id="path2989"
+       sodipodi:cx="33.839287"
+       sodipodi:cy="35.308609"
+       sodipodi:rx="17.321428"
+       sodipodi:ry="17.321428"
+       d="m 51.160715,35.308609 a 17.321428,17.321428 0 1 1 -34.642856,0 17.321428,17.321428 0 1 1 34.642856,0 z"
+       transform="matrix(0.89543707,0,0,0.89543707,104.50553,1.2532476)"
+       inkscape:export-filename="D:\UserMartin\Documents\Game Projects\GGJ2015\Assets\Sprites\Placeholders\circle.png"
+       inkscape:export-xdpi="260.22"
+       inkscape:export-ydpi="260.22" />
+    <path
+       style="fill:#808080;stroke:#333333;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 211.42857,102.36218 -44.28571,0 12.85714,35.71429 -22.85714,11.42857 -45.71429,37.14286 30,78.57142 20,-15.71428 -18.57143,-50 32.85715,-30 -14.28572,77.14286 -2.85714,42.85714 4.28571,108.57143 -32.85714,4.28571 14.28571,14.28572 40,-8.57143 12.85715,-128.57143 4.28571,132.85714 40,-1.42857 2.85714,-14.28571 -21.42857,-2.85715 20,-138.57143 -18.57143,-87.14285 37.14286,110 21.42857,-2.85715 -38.57143,-130 -22.85714,-7.14285 z"
+       id="path2993"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\UserMartin\Documents\Game Projects\GGJ2015\Assets\Sprites\Placeholders\human.png"
+       inkscape:export-xdpi="207.00999"
+       inkscape:export-ydpi="207.00999" />
+  </g>
+</svg>
