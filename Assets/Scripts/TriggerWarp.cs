@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TriggerPathway : MonoBehaviour {
+public class TriggerWarp : MonoBehaviour {
 	public Vector3 WarpPosition;
 	public Vector3 CameraPosition;
 	public float CameraSize;
@@ -16,11 +16,11 @@ public class TriggerPathway : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
+		print("Colliding");
 		if(col.tag == "Player")
 		{
-			print("Colliding");
 			col.transform.position = WarpPosition;
-			Camera.main.transform.position = CameraPosition;
+			Camera.main.transform.position = CameraPosition+new Vector3(0,0,-10);
 			Camera.main.orthographicSize = CameraSize;
 		}
 	}

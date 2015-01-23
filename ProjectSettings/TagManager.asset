@@ -45,3 +45,11 @@ TagManager:
     userID: 0
     uniqueID: 0
     locked: 0
+  - name: Decor
+    userID: 2
+    uniqueID: 2004676157
+    locked: 0
+  - name: Characters
+    userID: 3
+    uniqueID: 154915995
+    locked: 0
