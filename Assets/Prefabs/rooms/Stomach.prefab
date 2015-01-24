@@ -90,6 +90,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &168480
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 468480}
+  m_Layer: 0
+  m_Name: WarpSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &168482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 468482}
+  m_Layer: 0
+  m_Name: CameraPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &183720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,6 +1074,30 @@ Transform:
   - {fileID: 416538}
   m_Father: {fileID: 483764}
   m_RootOrder: 5
+--- !u!4 &468480
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168480}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 483726}
+  m_RootOrder: 0
+--- !u!4 &468482
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168482}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 483764}
+  m_RootOrder: 6
 --- !u!4 &483720
 Transform:
   m_ObjectHideFlags: 1
@@ -1092,7 +1146,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 468480}
   m_Father: {fileID: 483764}
   m_RootOrder: 1
 --- !u!4 &483728
@@ -1339,7 +1394,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -37.5999985, y: 55.4000015, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 483790}
@@ -1348,6 +1403,7 @@ Transform:
   - {fileID: 483792}
   - {fileID: 483720}
   - {fileID: 416548}
+  - {fileID: 468482}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &483766
@@ -2321,11 +2377,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7413a05d0ad423886f1552abe938d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WarpPosition: {x: 110, y: 0, z: 0}
-  CameraPosition: {x: 150, y: 0, z: 0}
+  WarpPosition: {fileID: 468480}
+  CameraPosition: {fileID: 468482}
   CameraSize: 30
   DestinationRoom: {fileID: 0}
-  ThisRoom: {fileID: 0}
 --- !u!114 &11483726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2607,7 +2662,7 @@ MonoBehaviour:
   spawnOffsetMax: 1
   noCurePeriod: 2
   cureModifierSwarmers: .100000001
-  cureModifierFraction: .400000006
+  cureModifierFraction: .200000003
 --- !u!114 &11483758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -26751,7 +26806,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1469402527
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 97d1997c37af142f09c32e2df907c1da, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8125539010a6242d0ab524b32f1862cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21283738
 SpriteRenderer:
