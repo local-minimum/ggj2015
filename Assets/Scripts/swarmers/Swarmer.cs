@@ -82,9 +82,17 @@ public class Swarmer : MonoBehaviour {
 
 	public void AddForceLeader(Vector2 force) {
 		rigidbody2D.AddForce(wobble(force * forceFactor));
+		DirectLeaderEffect(force);
 
 		foreach (Swarmer swarmer in swarm)
 			swarmer.AddForceFollower(force, this);
+	}
+
+	public void DirectLeaderEffect(Vector2 force) {
+		if (force.magnitude < 0.1f)
+			leaderEffect.transform.localRotation = Quaternion.identity;
+		else
+			leaderEffect.transform.rotation = Quaternion.LookRotation(force * -1);
 	}
 
 	public Vector2 wobble(Vector2 force) {
