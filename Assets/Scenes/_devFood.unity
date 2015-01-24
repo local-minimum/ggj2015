@@ -11736,6 +11736,7 @@ Transform:
   - {fileID: 1521614404}
   - {fileID: 137707095}
   - {fileID: 721741019}
+  - {fileID: 1533009314}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!114 &957895431
@@ -11757,6 +11758,7 @@ MonoBehaviour:
     height: 0
   StartRoom: 0
   foodPoint: {fileID: 721741019}
+  swarmHolder: {fileID: 1533009314}
 --- !u!1 &968014675
 GameObject:
   m_ObjectHideFlags: 0
@@ -19482,8 +19484,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1533009313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.35710001, y: .869970858, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.45236683, y: .289990306, z: 0}
+  m_LocalScale: {x: .333333343, y: .333333343, z: 1}
   m_Children:
   - {fileID: 2087411995}
   - {fileID: 524006834}
@@ -19496,8 +19498,8 @@ Transform:
   - {fileID: 30754081}
   - {fileID: 378367330}
   - {fileID: 1228083728}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 957895430}
+  m_RootOrder: 4
 --- !u!1 &1586517943
 GameObject:
   m_ObjectHideFlags: 0
