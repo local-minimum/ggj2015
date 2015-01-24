@@ -28,4 +28,10 @@ public class Level : Singleton<Level> {
 			return Input.mousePosition;
 		}
 	}
+
+	public static float PerlinValue {
+		get {
+			return 0.465f;
+		}
+	}
 }

@@ -60,6 +60,6 @@ public class Food : MonoBehaviour {
 	}
 
 	void DieFromDepletion() {
-		Destroy(gameObject);
+		gameObject.SetActive(false);
 	}
 }
