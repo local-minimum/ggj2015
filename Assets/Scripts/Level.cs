@@ -18,20 +18,20 @@ public class Level : Singleton<Level> {
 	}
 
 	void InitEmptySwarmerLists() {
-		foreach (Swarmer.SwarmerTypes swarmType in System.Enum.GetValues(typeof(Swarmer.SwarmerTypes)))
+		foreach (Swarmer.SwarmerTypes swarmType in GetSwarmerTypes())
 			swarmPool[swarmType] = new List<Swarmer>();
 	}
 
 	void FindAllExistingSwarmers() {
 		Swarmer[] allSwarmers = GameObject.FindObjectsOfType<Swarmer>();
 
-		foreach (Swarmer.SwarmerTypes swarmType in System.Enum.GetValues(typeof(Swarmer.SwarmerTypes)))
+		foreach (Swarmer.SwarmerTypes swarmType in GetSwarmerTypes())
 			swarmPool[swarmType].AddRange(allSwarmers.Where(s => s.SwarmerType == swarmType));
 
 	}
 
 	void FillUpWithInactiveSwarmers() {
-		foreach (Swarmer.SwarmerTypes swarmType in System.Enum.GetValues(typeof(Swarmer.SwarmerTypes))) {
+		foreach (Swarmer.SwarmerTypes swarmType in GetSwarmerTypes()) {
 			Swarmer prefab = swarmerTypes.Where(s => s.SwarmerType == swarmType).FirstOrDefault();
 			if (prefab) {
 				while (swarmPool[swarmType].Count() < maxSwarmersPerType) {
@@ -45,6 +45,10 @@ public class Level : Singleton<Level> {
 			} else
 				Debug.LogError(string.Format("Missing swarmer prefab of type {0}", swarmType));
 		}
+	}
+	
+	public Swarmer.SwarmerTypes[] GetSwarmerTypes() {
+		return (Swarmer.SwarmerTypes[]) System.Enum.GetValues(typeof(Swarmer.SwarmerTypes));
 	}
 
 	public static float timeSinceLevelStart {
@@ -83,5 +87,13 @@ public class Level : Singleton<Level> {
 		SwarmLeaderController.RemoveMeFromPower(swarmer);
 		swarmer.transform.parent = Instance.dormantSwarmersHolder;
 		swarmer.gameObject.SetActive(false);
+	}
+
+	public static bool IsAvailable(Swarmer.SwarmerTypes swarmerType) {
+		return Instance.swarmPool[swarmerType].Any(s => !s.gameObject.activeSelf && s.SwarmerType == swarmerType);
+	}
+
+	public Swarmer GetSwarmer(Swarmer.SwarmerTypes swarmerType) {
+		return Instance.swarmPool[swarmerType].FirstOrDefault(s => !s.gameObject.activeSelf && s.SwarmerType == swarmerType);
 	}
 }

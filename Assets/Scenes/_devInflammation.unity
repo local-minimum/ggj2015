@@ -10217,6 +10217,33 @@ Prefab:
   m_RootGameObject: {fileID: 524006833}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &702277111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 702277112}
+  m_Layer: 0
+  m_Name: inflammationEffects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &702277112
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 702277111}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 957895430}
+  m_RootOrder: 4
 --- !u!1 &707678055
 GameObject:
   m_ObjectHideFlags: 0
@@ -11846,6 +11873,7 @@ Transform:
   - {fileID: 137707095}
   - {fileID: 721741019}
   - {fileID: 1533009314}
+  - {fileID: 702277112}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!114 &957895431
@@ -11879,6 +11907,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36951e2588e4d448a2cfc9568b8fa09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inflammationEffectsHolder: {fileID: 702277111}
+  averageBetweenInflammationTime: 0
+  betweenInflammationTimeVariation: 0
 --- !u!1 &968014675
 GameObject:
   m_ObjectHideFlags: 0
