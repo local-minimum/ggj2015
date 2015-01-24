@@ -2602,10 +2602,12 @@ MonoBehaviour:
   inflamationTypes: 000000000100000002000000
   averageBetweenInflammationTime: 15
   betweenInflammationTimeVariation: 5
-  swarmerDuplicationP: .100000001
-  spontaneousGenerationP: .200000003
+  swarmerDuplicationP: .300000012
+  spontaneousGenerationP: .800000012
   spawnOffsetMax: 1
   noCurePeriod: 2
+  cureModifierSwarmers: .100000001
+  cureModifierFraction: .400000006
 --- !u!114 &11483758
 MonoBehaviour:
   m_ObjectHideFlags: 1

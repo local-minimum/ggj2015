@@ -26,6 +26,11 @@ public class Inflammation : MonoBehaviour {
 
 	public float noCurePeriod = 2f;
 
+	[Range(0, 1)]
+	public float cureModifierSwarmers = 0.1f;
+
+	[Range(0, 1)]
+	public float cureModifierFraction = 0.4f;
 
 	// Use this for initialization
 	void Start () {
@@ -67,10 +72,22 @@ public class Inflammation : MonoBehaviour {
 
 		}
 	}
-	
+
+	float CureProbability() {
+		float swarmers = room.swarmerCount;
+		float fraction = room.GetSwarmerByType(inflamationType).Count() / swarmers;
+		float inflammationDuration = Level.timeSinceLevelStart - inflamationStart;
+
+		if (fraction == 0f)
+			fraction = 1f;
+
+		return inflammationDuration / fraction * cureModifierFraction + swarmers * cureModifierSwarmers;
+	}
+
 	void TestCured() {
 		if (Level.timeSinceLevelStart - inflamationStart > noCurePeriod) {
-			if (Random.value < 0.4f * Time.deltaTime)
+			Debug.Log(CureProbability());
+			if (Random.value < CureProbability() * Time.deltaTime)
 				SetNextInflamation();
 		}
 	}
