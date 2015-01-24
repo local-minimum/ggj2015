@@ -161,6 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 0
+  biteSize: 0
 --- !u!50 &30754083
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1578,6 +1580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 0
+  biteSize: 0
 --- !u!50 &376250608
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1712,6 +1716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 0
+  biteSize: 0
 --- !u!50 &378367332
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1831,6 +1837,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 0
+  biteSize: 0
 --- !u!50 &386521544
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -6464,6 +6472,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 0
+  biteSize: 0
 --- !u!50 &524006836
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -9978,6 +9988,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 0
+  biteSize: 0
 --- !u!50 &673348910
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -10149,6 +10161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 0
+  biteSize: 0
 --- !u!50 &707678058
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -10374,6 +10388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 0
+  biteSize: 0
 --- !u!50 &913290386
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -14400,6 +14416,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 0
+  biteSize: 0
 --- !u!50 &1198100790
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -15634,6 +15652,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 0
+  biteSize: 0
 --- !u!50 &1228083730
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -26665,6 +26685,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 0
+  biteSize: 0
 --- !u!50 &2087411997
 Rigidbody2D:
   m_ObjectHideFlags: 0
