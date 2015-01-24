@@ -5,6 +5,7 @@ public class TriggerWarp : MonoBehaviour {
 	public Vector3 WarpPosition;
 	public Vector3 CameraPosition;
 	public float CameraSize;
+	public RoomProperties Room;
 	
 	void OnDrawGizmosSelected () {
 		Gizmos.color = Color.green;
@@ -16,12 +17,16 @@ public class TriggerWarp : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
-		print("Colliding");
-		if(col.tag == "Player")
+		if(col.gameObject == SwarmLeaderController.Leader.gameObject)
 		{
 			col.transform.position = WarpPosition;
 			Level.mainCamera.transform.position = CameraPosition+new Vector3(0,0,-10);
 			Level.mainCamera.orthographicSize = CameraSize;
+			Level.currentRoom = Room;
+		}
+		if(col.tag == "Microbe")
+		{
+			col.transform.position = WarpPosition;
 		}
 	}
 }

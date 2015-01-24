@@ -129,7 +129,7 @@ GameObject:
   - 114: {fileID: 30754082}
   m_Layer: 0
   m_Name: circleCharacter8
-  m_TagString: Untagged
+  m_TagString: Microbe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,11 +242,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 430192, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -14.5100307
+      value: -.699999988
       objectReference: {fileID: 0}
     - target: {fileID: 430192, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.48012733
+      value: 13.3000002
       objectReference: {fileID: 0}
     - target: {fileID: 430192, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
       propertyPath: m_LocalPosition.z
@@ -278,7 +278,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 130192, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Microbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
@@ -313,9 +313,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7413a05d0ad423886f1552abe938d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WarpPosition: {x: 110, y: 0, z: 0}
-  CameraPosition: {x: 150, y: 0, z: 0}
-  CameraSize: 30
+  WarpPosition: {x: 110, y: 18.7999992, z: 0}
+  CameraPosition: {x: 110, y: 18.7999992, z: 0}
+  CameraSize: 18
+  Room: {fileID: 0}
 --- !u!61 &137707094
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -334,7 +335,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 137707092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 0, z: 0}
+  m_LocalPosition: {x: 9.56000042, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 957895430}
@@ -1539,7 +1540,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 130192, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Microbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
@@ -1561,7 +1562,7 @@ GameObject:
   - 114: {fileID: 376250607}
   m_Layer: 0
   m_Name: circleCharacter1
-  m_TagString: Untagged
+  m_TagString: Microbe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1680,7 +1681,7 @@ GameObject:
   - 114: {fileID: 378367331}
   m_Layer: 0
   m_Name: circleCharacter4
-  m_TagString: Untagged
+  m_TagString: Microbe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1799,7 +1800,7 @@ GameObject:
   - 114: {fileID: 386521543}
   m_Layer: 0
   m_Name: circleCharacter9
-  m_TagString: Untagged
+  m_TagString: Microbe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3027,6 +3028,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 448020220}
   - 212: {fileID: 448020219}
+  - 114: {fileID: 448020221}
   m_Layer: 0
   m_Name: RightArm
   m_TagString: Untagged
@@ -3072,6 +3074,24 @@ Transform:
   - {fileID: 1061523428}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &448020221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448020218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474b29cdf48f84eda873ccb6170aae17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bounds:
+    serializedVersion: 2
+    x: 97
+    y: -30
+    width: 105.800003
+    height: 58.6800003
+  StartRoom: 0
 --- !u!1 &450617198
 GameObject:
   m_ObjectHideFlags: 0
@@ -6432,7 +6452,7 @@ GameObject:
   - 114: {fileID: 524006835}
   m_Layer: 0
   m_Name: circleCharacter11
-  m_TagString: Untagged
+  m_TagString: Microbe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8800,7 +8820,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1469402527
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 357506b1b4af04ccdba5a3c3654eda72, type: 3}
   m_Color: {r: .860294104, g: .493403971, b: .493403971, a: 1}
@@ -9946,7 +9966,7 @@ GameObject:
   - 114: {fileID: 673348909}
   m_Layer: 0
   m_Name: circleCharacter5
-  m_TagString: Untagged
+  m_TagString: Microbe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10095,7 +10115,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 130192, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Microbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
@@ -10117,7 +10137,7 @@ GameObject:
   - 114: {fileID: 707678057}
   m_Layer: 0
   m_Name: circleCharacter10
-  m_TagString: Untagged
+  m_TagString: Microbe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10252,6 +10272,7 @@ MonoBehaviour:
   WarpPosition: {x: 190, y: 0, z: 0}
   CameraPosition: {x: 150, y: 0, z: 0}
   CameraSize: 30
+  Room: {fileID: 0}
 --- !u!61 &804468381
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10320,7 +10341,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 130192, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Microbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
@@ -10342,7 +10363,7 @@ GameObject:
   - 114: {fileID: 913290385}
   m_Layer: 0
   m_Name: circleCharacter3
-  m_TagString: Untagged
+  m_TagString: Microbe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11607,8 +11628,8 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1469402527
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 357506b1b4af04ccdba5a3c3654eda72, type: 3}
   m_Color: {r: .860294104, g: .493403971, b: .493403971, a: 1}
 --- !u!1 &957895428
@@ -11621,6 +11642,7 @@ GameObject:
   - 4: {fileID: 957895430}
   - 212: {fileID: 957895429}
   - 114: {fileID: 957895431}
+  - 114: {fileID: 957895432}
   m_Layer: 0
   m_Name: Stomach
   m_TagString: Untagged
@@ -11662,6 +11684,7 @@ Transform:
   m_Children:
   - {fileID: 1521614404}
   - {fileID: 137707095}
+  - {fileID: 1634142873}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!114 &957895431
@@ -11675,6 +11698,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474b29cdf48f84eda873ccb6170aae17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Bounds:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  StartRoom: 0
+--- !u!114 &957895432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 957895428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474b29cdf48f84eda873ccb6170aae17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bounds:
+    serializedVersion: 2
+    x: -30
+    y: -30
+    width: 60
+    height: 60
+  StartRoom: 1
 --- !u!1 &968014675
 GameObject:
   m_ObjectHideFlags: 0
@@ -11718,6 +11766,7 @@ MonoBehaviour:
   WarpPosition: {x: 7, y: 0, z: 0}
   CameraPosition: {x: 0, y: 0, z: 0}
   CameraSize: 30
+  Room: {fileID: 0}
 --- !u!61 &968014678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11874,7 +11923,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 130192, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Microbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
@@ -11924,6 +11973,7 @@ MonoBehaviour:
   WarpPosition: {x: 300, y: 0, z: 0}
   CameraPosition: {x: 300, y: 0, z: 0}
   CameraSize: 30
+  Room: {fileID: 0}
 --- !u!61 &1061523430
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14218,6 +14268,7 @@ GameObject:
   - 124: {fileID: 1175416998}
   - 81: {fileID: 1175416997}
   - 114: {fileID: 1175417002}
+  - 50: {fileID: 1175417003}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -14255,7 +14306,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: 1, g: .733333349, b: .521568656, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -14266,7 +14317,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 17
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -14301,6 +14352,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1496b72fad83b47f2b0b2d95f5884169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0, z: -10}
+  movementBounds:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 5
+    height: 5
+  coRoutineRunning: 0
+--- !u!50 &1175417003
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1175416996}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1001 &1186926155
 Prefab:
   m_ObjectHideFlags: 0
@@ -14346,7 +14420,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 130192, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Microbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
@@ -14368,7 +14442,7 @@ GameObject:
   - 114: {fileID: 1198100789}
   m_Layer: 0
   m_Name: circleCharacter7
-  m_TagString: Untagged
+  m_TagString: Microbe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14380,7 +14454,7 @@ Transform:
   m_PrefabInternal: {fileID: 123829608}
   m_GameObject: {fileID: 1198100787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.5100307, y: 4.48012733, z: 0}
+  m_LocalPosition: {x: -.699999988, y: 13.3000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1365374255}
@@ -15602,7 +15676,7 @@ GameObject:
   - 114: {fileID: 1228083729}
   m_Layer: 0
   m_Name: circleCharacter2
-  m_TagString: Untagged
+  m_TagString: Microbe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15751,7 +15825,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 130192, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Microbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
@@ -18073,7 +18147,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 130192, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Microbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
@@ -19410,7 +19484,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 130192, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Microbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
@@ -19467,6 +19541,75 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 357506b1b4af04ccdba5a3c3654eda72, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
+--- !u!1 &1634142872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1634142873}
+  - 60: {fileID: 1634142874}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1634142873
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1634142872}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.8800001, y: -.589999974, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 957895430}
+  m_RootOrder: 2
+--- !u!60 &1634142874
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1634142872}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Poly:
+    m_Paths:
+    - - {x: -6.61482, y: 3.16362119}
+      - {x: -6.01489449, y: 4.90657282}
+      - {x: -5.94493675, y: 7.79788733}
+      - {x: -7.37603092, y: 8.51621532}
+      - {x: -8.5159626, y: 8.48903179}
+      - {x: -10.7467079, y: 8.90621662}
+      - {x: -17.6669197, y: 8.66945839}
+      - {x: -20.5649757, y: 7.99601126}
+      - {x: -21.0324211, y: 5.58587646}
+      - {x: -20.7725792, y: -.631926954}
+      - {x: -20.7360497, y: -3.78228974}
+      - {x: -20.8770142, y: -4.56361961}
+      - {x: -21.2646503, y: -6.43261814}
+      - {x: -14.879221, y: -7.24447441}
+      - {x: -13.1797829, y: -6.79684258}
+      - {x: -11.9335117, y: -7.89311409}
+      - {x: -7.03544569, y: -7.73381042}
+      - {x: -2.2752943, y: -9.4969883}
+      - {x: -22.9718666, y: -9.2257576}
+      - {x: -23.1333389, y: 8.3824482}
+      - {x: -23.0750656, y: 10.8907814}
+      - {x: -2.71818161, y: 10.728961}
+      - {x: -2.00807285, y: -9.68958187}
+      - {x: -6.77452469, y: -7.91539383}
+      - {x: -3.89989948, y: -7.63197041}
+      - {x: -3.37199497, y: -5.23437452}
+      - {x: -5.62766743, y: -2.10922527}
+      - {x: -6.65246868, y: -.705890357}
+      - {x: -6.74336243, y: .855738759}
+      - {x: -6.52549171, y: 1.46184874}
 --- !u!1 &1708612354
 GameObject:
   m_ObjectHideFlags: 0
@@ -21742,7 +21885,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 130192, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Microbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
@@ -26468,7 +26611,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 130192, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Microbe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
@@ -26633,7 +26776,7 @@ GameObject:
   - 114: {fileID: 2087411996}
   m_Layer: 0
   m_Name: circleCharacter6
-  m_TagString: Untagged
+  m_TagString: Microbe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
