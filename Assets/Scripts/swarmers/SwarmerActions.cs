@@ -44,6 +44,7 @@ public class SwarmerActions : MonoBehaviour {
 	}
 
 	void EatFood(Food food) {
+
 		if (canBite) {
 			if (food.isEdible(swarmer))
 				food.Eat(swarmer.SwarmerType, GetBiteSize());
@@ -52,6 +53,7 @@ public class SwarmerActions : MonoBehaviour {
 	}
 
 	void DieFromEating() {
-
+		SwarmLeaderController.RemoveMeFromPower(swarmer);
+		Destroy(gameObject);
 	}
 }

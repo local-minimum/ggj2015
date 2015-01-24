@@ -12,9 +12,9 @@ TagManager:
   Builtin Layer 5: UI
   Builtin Layer 6: 
   Builtin Layer 7: 
-  User Layer 8: 
-  User Layer 9: 
-  User Layer 10: 
+  User Layer 8: Microbe
+  User Layer 9: MicrobeTrigger
+  User Layer 10: Food
   User Layer 11: 
   User Layer 12: 
   User Layer 13: 
@@ -48,6 +48,10 @@ TagManager:
   - name: Decor
     userID: 2
     uniqueID: 2004676157
+    locked: 0
+  - name: Food
+    userID: 4
+    uniqueID: 1458867563
     locked: 0
   - name: Characters
     userID: 3

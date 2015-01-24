@@ -9,8 +9,25 @@ public class Food : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		VerifyIntegrity();
+		InstantiateFoodComponents();
+	}
+
+	void VerifyIntegrity() {
+		
 		if (foodComponents.Count != foodComponentPositions.Count)
 			Debug.LogError(string.Format("{0} missmatch in number of food components and positions", gameObject));
+
+	}
+
+	void InstantiateFoodComponents() {
+		for (int i=0, l=foodComponents.Count; i<l; i++) {
+			FoodComponent instance = ((GameObject) Instantiate(foodComponents[i].gameObject)).GetComponent<FoodComponent>();
+			instance.transform.parent = foodComponentPositions[i];
+			instance.transform.localPosition = Vector3.zero;
+			foodComponents[i] = instance;
+		}
+
 	}
 
 	private FoodComponent getFirstNonDepletedComponent(Swarmer.SwarmerTypes foodType) {
@@ -28,7 +45,7 @@ public class Food : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
-		other.BroadcastMessage("EatFood", this);
+		other.BroadcastMessage("EatFood", this, SendMessageOptions.DontRequireReceiver);
 	}
 
 }
