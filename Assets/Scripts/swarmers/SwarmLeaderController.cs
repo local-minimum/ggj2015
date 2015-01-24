@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class SwarmLeaderController : Singleton<SwarmLeaderController> {
 
@@ -11,7 +12,11 @@ public class SwarmLeaderController : Singleton<SwarmLeaderController> {
 
 	// Use this for initialization
 	void Start () {
-	
+//		float x = Random.value * 1000f;
+//		float[] p = new float[100000];
+//		for (int i=0; i<p.Length;  i++)
+//			p[i] = Mathf.PerlinNoise(x, i);
+//		Debug.Log(p.Sum()/p.Count());
 	}
 	
 	// Update is called once per frame

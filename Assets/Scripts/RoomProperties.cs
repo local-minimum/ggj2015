@@ -5,6 +5,7 @@ public class RoomProperties : MonoBehaviour {
 
 	public Rect Bounds;
 	public bool StartRoom;
+	public Transform foodPoint;
 
 	void Awake () {
 		if(StartRoom)

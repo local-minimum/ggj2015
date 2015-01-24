@@ -42,6 +42,8 @@ GameObject:
   - 114: {fileID: 11490460}
   - 61: {fileID: 6162676}
   - 61: {fileID: 6162678}
+  - 50: {fileID: 5057592}
+  - 114: {fileID: 11457592}
   m_Layer: 10
   m_Name: potato
   m_TagString: Untagged
@@ -80,13 +82,28 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5, y: .300000012, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.83333337, y: .100000009, z: 0}
+  m_LocalScale: {x: .333333343, y: .333333343, z: 1}
   m_Children:
   - {fileID: 490460}
   - {fileID: 490462}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5057592
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190464}
+  m_Mass: 15
+  m_LinearDrag: .25
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!61 &6162676
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -106,9 +123,25 @@ BoxCollider2D:
   m_GameObject: {fileID: 190464}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 2.20000005, y: 4.19999981}
   m_Center: {x: 0, y: 0}
+--- !u!114 &11457592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475c989373304bc4ab58d15bf41077c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnHomeDistance: 10
+  forceFactor: 500
+  forceFrequency: 1.5
+  torqueFrequency: .300000012
+  torqueFactor: 5
 --- !u!114 &11490460
 MonoBehaviour:
   m_ObjectHideFlags: 1
