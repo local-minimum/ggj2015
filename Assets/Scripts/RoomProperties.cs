@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class RoomProperties : MonoBehaviour {
 
@@ -29,5 +30,9 @@ public class RoomProperties : MonoBehaviour {
 	public void AddSwarmer(Swarmer swarmer) {
 		swarm.Add(swarmer);
 		swarmer.transform.parent = swarmHolder;
+	}
+
+	public IEnumerable<Swarmer> GetSwarmerByType(Swarmer.SwarmerTypes swarmererType) {
+		return swarm.Where(s => s.SwarmerType == swarmererType);
 	}
 }

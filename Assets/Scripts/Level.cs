@@ -93,7 +93,9 @@ public class Level : Singleton<Level> {
 		return Instance.swarmPool[swarmerType].Any(s => !s.gameObject.activeSelf && s.SwarmerType == swarmerType);
 	}
 
-	public Swarmer GetSwarmer(Swarmer.SwarmerTypes swarmerType) {
-		return Instance.swarmPool[swarmerType].FirstOrDefault(s => !s.gameObject.activeSelf && s.SwarmerType == swarmerType);
+	public static Swarmer GetSwarmer(Swarmer.SwarmerTypes swarmerType) {
+		Swarmer swarmer = Instance.swarmPool[swarmerType].FirstOrDefault(s => !s.gameObject.activeSelf && s.SwarmerType == swarmerType);
+		swarmer.gameObject.SetActive(true);
+		return swarmer;
 	}
 }

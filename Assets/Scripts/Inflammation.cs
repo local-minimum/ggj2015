@@ -6,6 +6,7 @@ public class Inflammation : MonoBehaviour {
 
 	public GameObject inflammationEffectsHolder;
 	public Material[] inflammationParticleMaterials;
+	public Transform[] spawningPositions;
 
 	private RoomProperties room;
 
@@ -18,6 +19,14 @@ public class Inflammation : MonoBehaviour {
 	private float inflamationStart;
 	private bool inflamated = false;
 
+	public float swarmerDuplicationP = 0.1f;
+	public float spontaneousGenerationP = 0.2f;
+
+	public float spawnOffsetMax = 1f;
+
+	public float noCurePeriod = 2f;
+
+
 	// Use this for initialization
 	void Start () {
 		room = GetComponent<RoomProperties>();
@@ -27,9 +36,42 @@ public class Inflammation : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (inflamated) {
-
+			SpontaneousGeneration();
+			SwarmerDuplication();
+			TestCured();
 		} else if (IsNewOutBreak()) {
+			SetOutbreak();
+		}
+	}
 
+	void SpontaneousGeneration() {
+		if (Random.value < spontaneousGenerationP * Time.deltaTime)
+			NewSpawn(spawningPositions[Random.Range(0, spawningPositions.Length)].position);
+
+	}
+
+	void SwarmerDuplication() {
+		Swarmer[] swarmers = room.GetSwarmerByType(inflamationType).ToArray();
+		foreach (Swarmer swarmer in swarmers) {
+			if (Random.value < swarmerDuplicationP * Time.deltaTime)
+				NewSpawn(swarmer.transform.position);
+
+		}
+	}
+
+	void NewSpawn(Vector3 position) {
+		if (Level.IsAvailable(inflamationType)) {
+			Swarmer swarmer = Level.GetSwarmer(inflamationType);
+			swarmer.transform.position = position + new Vector3(Random.Range(-spawnOffsetMax, spawnOffsetMax), Random.Range(-spawnOffsetMax, spawnOffsetMax));
+			room.AddSwarmer(swarmer);
+
+		}
+	}
+	
+	void TestCured() {
+		if (Level.timeSinceLevelStart - inflamationStart > noCurePeriod) {
+			if (Random.value < 0.4f * Time.deltaTime)
+				SetNextInflamation();
 		}
 	}
 
@@ -56,6 +98,7 @@ public class Inflammation : MonoBehaviour {
 	}
 
 	void SetNextInflamation() {
+		inflamated = false;
 		nextInflammation = Level.timeSinceLevelStart + averageBetweenInflammationTime + Random.Range(-betweenInflammationTimeVariation, betweenInflammationTimeVariation);
 	}
 }
