@@ -33,7 +33,7 @@ public class SwarmerActions : MonoBehaviour {
 
 	bool canBite {
 		get {
-			return Mathf.Sign(bitingCapacity) == 1;
+			return bitingCapacity > 0.05f;
 		}
 	}
 

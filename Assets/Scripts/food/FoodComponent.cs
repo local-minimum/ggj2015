@@ -26,7 +26,13 @@ public class FoodComponent : MonoBehaviour {
 
 	public bool depleted {
 		get {
-			return Mathf.Sign(_currentEnergy) != 1;
+			return _currentEnergy < 0.05f;
+		}
+	}
+
+	public float energy {
+		get {
+			return _currentEnergy;
 		}
 	}
 

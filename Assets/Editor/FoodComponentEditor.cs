@@ -14,8 +14,8 @@ public class FoodComponentEditor : Editor {
 		EditorGUI.indentLevel += 1;
 		
 		EditorGUILayout.HelpBox(string.Format(
-			"Current Fraction:\t{0}", 
-			myTarget.energyFractionRemaining), MessageType.Info);
+			"Remaing Energy:\t{2}\nCurrent Fraction:\t{0}\nDepleted:\t{1}", 
+			myTarget.energyFractionRemaining, myTarget.depleted, myTarget.energy), MessageType.Info);
 		EditorGUI.indentLevel -= 1;
 	}
 }

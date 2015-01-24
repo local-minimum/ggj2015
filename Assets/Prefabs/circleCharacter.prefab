@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bitingCapacity: 5
+  bitingCapacity: 10
   biteSize: 10
 --- !u!198 &19874526
 ParticleSystem:
