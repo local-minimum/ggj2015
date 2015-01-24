@@ -84,15 +84,7 @@ public class Swarmer : MonoBehaviour {
 		if (swarmer)
 			swarm.Remove(swarmer);
 	}
-	
 
-	public void AddForceLeader(Vector2 force) {
-		rigidbody2D.AddForce(wobble(force * forceFactor));
-		DirectLeaderEffect(force);
-
-		foreach (Swarmer swarmer in swarm)
-			swarmer.AddForceFollower(force, this);
-	}
 
 	public void DirectLeaderEffect(Vector2 force) {
 		if (force.magnitude < 0.1f)
@@ -107,6 +99,15 @@ public class Swarmer : MonoBehaviour {
 
 	public bool isInSwarm(Swarmer swarmer) {
 		return swarm.Contains(swarmer);
+	}
+
+	
+	public void AddForceLeader(Vector2 force) {
+		rigidbody2D.AddForce(wobble(force * forceFactor));
+		DirectLeaderEffect(force);
+		
+		foreach (Swarmer swarmer in swarm)
+			swarmer.AddForceFollower(force, this);
 	}
 
 	public void AddForceFollower(Vector2 force, Swarmer leader) {

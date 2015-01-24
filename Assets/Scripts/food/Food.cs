@@ -30,8 +30,19 @@ public class Food : MonoBehaviour {
 
 	}
 
+	void Update() {
+		if (depleted)
+			DieFromDepletion();
+	}
+
 	private FoodComponent getFirstNonDepletedComponent(Swarmer.SwarmerTypes foodType) {
 		return foodComponents.Where(fc => !fc.depleted && fc.foodType == foodType).FirstOrDefault();
+	}
+
+	public bool depleted {
+		get {
+			return !foodComponents.Where (fc => !fc.depleted).Any();
+		}
 	}
 
 	public bool isEdible(Swarmer swarmer) {
@@ -48,4 +59,7 @@ public class Food : MonoBehaviour {
 		other.BroadcastMessage("EatFood", this, SendMessageOptions.DontRequireReceiver);
 	}
 
+	void DieFromDepletion() {
+		Destroy(gameObject);
+	}
 }
