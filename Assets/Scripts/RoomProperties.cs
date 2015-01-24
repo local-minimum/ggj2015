@@ -35,4 +35,10 @@ public class RoomProperties : MonoBehaviour {
 	public IEnumerable<Swarmer> GetSwarmerByType(Swarmer.SwarmerTypes swarmererType) {
 		return swarm.Where(s => s.SwarmerType == swarmererType);
 	}
+
+	public float swarmerCount {
+		get {
+			return swarm.Count();
+		}
+	}
 }
