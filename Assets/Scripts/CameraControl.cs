@@ -53,7 +53,6 @@ public class CameraControl : MonoBehaviour {
 	IEnumerator Move (Transform destination, float speed) {
 
 		coRoutineRunning = true;
-		rigidbody2D.velocity = Vector2.zero;
 		while(Vector3.Distance(transform.position-offset, destination.position) > 1)
 		{
 			Vector3 delta = Vector3.Lerp(transform.position, destination.position+offset, Time.deltaTime*speed) - transform.position;
