@@ -22,7 +22,7 @@ public class CameraControl : MonoBehaviour {
 			OnLeaderChange();
 		}
 
-		if(!coRoutineRunning)
+		if(!coRoutineRunning && Current != null)
 		{
 			if(Current.transform.position.x > transform.position.x + movementBounds.width/2 && Current.rigidbody2D.velocity.x > 0)
 				rigidbody2D.velocity = Current.rigidbody2D.velocity;

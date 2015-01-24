@@ -83,7 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4478504}
   - 58: {fileID: 4478503}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - 114: {fileID: 30754084}
   - 50: {fileID: 30754083}
   - 114: {fileID: 30754082}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: circleCharacter8
   m_TagString: Microbe
   m_Icon: {fileID: 0}
@@ -161,6 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 10
+  biteSize: 10
 --- !u!50 &30754083
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -349,7 +351,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 168805234}
   - 58: {fileID: 168805233}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1560,7 +1562,7 @@ GameObject:
   - 114: {fileID: 376250609}
   - 50: {fileID: 376250608}
   - 114: {fileID: 376250607}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: circleCharacter1
   m_TagString: Microbe
   m_Icon: {fileID: 0}
@@ -1579,6 +1581,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 10
+  biteSize: 10
 --- !u!50 &376250608
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1679,7 +1683,7 @@ GameObject:
   - 114: {fileID: 378367333}
   - 50: {fileID: 378367332}
   - 114: {fileID: 378367331}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: circleCharacter4
   m_TagString: Microbe
   m_Icon: {fileID: 0}
@@ -1713,6 +1717,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 10
+  biteSize: 10
 --- !u!50 &378367332
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1798,7 +1804,7 @@ GameObject:
   - 114: {fileID: 386521545}
   - 50: {fileID: 386521544}
   - 114: {fileID: 386521543}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: circleCharacter9
   m_TagString: Microbe
   m_Icon: {fileID: 0}
@@ -1832,6 +1838,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 10
+  biteSize: 10
 --- !u!50 &386521544
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -6450,7 +6458,7 @@ GameObject:
   - 114: {fileID: 524006837}
   - 50: {fileID: 524006836}
   - 114: {fileID: 524006835}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: circleCharacter11
   m_TagString: Microbe
   m_Icon: {fileID: 0}
@@ -6484,6 +6492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 10
+  biteSize: 10
 --- !u!50 &524006836
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -9964,7 +9974,7 @@ GameObject:
   - 114: {fileID: 673348911}
   - 50: {fileID: 673348910}
   - 114: {fileID: 673348909}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: circleCharacter5
   m_TagString: Microbe
   m_Icon: {fileID: 0}
@@ -9998,6 +10008,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 10
+  biteSize: 10
 --- !u!50 &673348910
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -10135,7 +10147,7 @@ GameObject:
   - 114: {fileID: 707678059}
   - 50: {fileID: 707678058}
   - 114: {fileID: 707678057}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: circleCharacter10
   m_TagString: Microbe
   m_Icon: {fileID: 0}
@@ -10169,6 +10181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 10
+  biteSize: 10
 --- !u!50 &707678058
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -10361,7 +10375,7 @@ GameObject:
   - 114: {fileID: 913290387}
   - 50: {fileID: 913290386}
   - 114: {fileID: 913290385}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: circleCharacter3
   m_TagString: Microbe
   m_Icon: {fileID: 0}
@@ -10395,6 +10409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 10
+  biteSize: 10
 --- !u!50 &913290386
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -11994,7 +12010,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1076865331}
   - 58: {fileID: 1076865332}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14440,7 +14456,7 @@ GameObject:
   - 114: {fileID: 1198100791}
   - 50: {fileID: 1198100790}
   - 114: {fileID: 1198100789}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: circleCharacter7
   m_TagString: Microbe
   m_Icon: {fileID: 0}
@@ -14474,6 +14490,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 10
+  biteSize: 10
 --- !u!50 &1198100790
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -15674,7 +15692,7 @@ GameObject:
   - 114: {fileID: 1228083731}
   - 50: {fileID: 1228083730}
   - 114: {fileID: 1228083729}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: circleCharacter2
   m_TagString: Microbe
   m_Icon: {fileID: 0}
@@ -15708,6 +15726,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 10
+  biteSize: 10
 --- !u!50 &1228083730
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -16956,7 +16976,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1264787012}
   - 58: {fileID: 1264787011}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18163,7 +18183,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1365374255}
   - 58: {fileID: 1365374256}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19318,7 +19338,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1415169085}
   - 58: {fileID: 1415169086}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19408,7 +19428,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1586517944}
   - 58: {fileID: 1586517945}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21901,7 +21921,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1840814140}
   - 58: {fileID: 1840814141}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24171,7 +24191,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1929599795}
   - 58: {fileID: 1929599794}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26441,7 +26461,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1983135303}
   - 58: {fileID: 1983135304}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26730,7 +26750,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2085542318}
   - 58: {fileID: 2085542319}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26774,7 +26794,7 @@ GameObject:
   - 114: {fileID: 2087411998}
   - 50: {fileID: 2087411997}
   - 114: {fileID: 2087411996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: circleCharacter6
   m_TagString: Microbe
   m_Icon: {fileID: 0}
@@ -26808,6 +26828,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 10
+  biteSize: 10
 --- !u!50 &2087411997
 Rigidbody2D:
   m_ObjectHideFlags: 0
