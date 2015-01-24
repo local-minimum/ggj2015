@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class Inflammation : MonoBehaviour {
 
 	public GameObject inflammationEffectsHolder;
+	public Material[] inflammationParticleMaterials;
 
 	private RoomProperties room;
 
-	private Swarmer.SwarmerTypes[] inflamationTypes;
+	public Swarmer.SwarmerTypes[] inflamationTypes;
 	private Swarmer.SwarmerTypes inflamationType;
 
 	public float averageBetweenInflammationTime = 10f;
@@ -19,7 +21,6 @@ public class Inflammation : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		room = GetComponent<RoomProperties>();
-		inflamationTypes = Level.Instance.GetSwarmerTypes();
 		SetNextInflamation();
 	}
 	
@@ -39,9 +40,15 @@ public class Inflammation : MonoBehaviour {
 		inflamated = true;
 	}
 
+	Material getInflammationEffectMaterial() {
+		return inflammationParticleMaterials[System.Array.IndexOf(inflamationTypes, inflamationType)];
+	}
+
 	void ActivateEffects() {
-		foreach (ParticleSystem particleSystem in inflammationEffectsHolder.GetComponentsInChildren<ParticleSystem>())
+		foreach (ParticleSystem particleSystem in inflammationEffectsHolder.GetComponentsInChildren<ParticleSystem>()) {
+			particleSystem.renderer.material = getInflammationEffectMaterial();
 			particleSystem.Play();
+		}
 	}
 
 	bool IsNewOutBreak() {
