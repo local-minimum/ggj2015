@@ -8,4 +8,10 @@ public class Level : Singleton<Level> {
 			return Time.timeSinceLevelLoad;
 		}
 	}
+
+	public static Camera mainCamera {
+		get {
+			return Camera.main;
+		}
+	}
 }
