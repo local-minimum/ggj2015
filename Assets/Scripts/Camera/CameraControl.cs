@@ -5,16 +5,23 @@ public class CameraControl : MonoBehaviour {
 	 
 	public Vector3 offset = new Vector3(0,0,-10);
 	public Rect movementBounds;
-	
+	public float changeLeaderTime = 10f;
+	public float leaderZoom = 4f;
+
 	Swarmer current;
-	public bool coRoutineRunning;
+
+	private bool coRoutineRunning;
 
 	// Use this for initialization
 	void OnDrawGizmosSelected () {
 		Gizmos.color = new Color(0,1,0,0.3f);
 		Gizmos.DrawCube(new Vector3(transform.position.x, transform.position.y,0), new Vector3(movementBounds.width, movementBounds.height));
 	}
-	
+
+	void Start() {
+		OnLeaderChange();
+	}
+
 	// Update is called once per frame
 	void Update () {
 
@@ -40,24 +47,29 @@ public class CameraControl : MonoBehaviour {
 	}
 
 	void OnLeaderChange () {
-		current = SwarmLeaderController.Leader;
 		Debug.Log("Leader Changed");
-		MoveCameraTo(current.transform, 10);
+		current = SwarmLeaderController.Leader;
+		if (current) 
+			MoveCameraTo(current.transform, RoomManager.currentRoom.Bounds.size.magnitude / leaderZoom, changeLeaderTime);
+		else
+			MoveCameraTo(RoomManager.currentRoom.leaderlessCameraPosition, RoomManager.currentRoom.cameraSize, changeLeaderTime);
 	}
 
-	void MoveCameraTo (Transform destination, float speed) {
+	void MoveCameraTo (Transform destination, float orthoSize, float speed) {
 		StopAllCoroutines();
-		StartCoroutine(Move(destination, speed));
+		StartCoroutine(Move(destination,  orthoSize, speed));
 	}
 
-	IEnumerator Move (Transform destination, float speed) {
-
+	IEnumerator Move (Transform destination, float orthoSize, float duration) {
+		Debug.Log(camera.orthographicSize);
+		Debug.Log(orthoSize);
 		coRoutineRunning = true;
-		while(Vector3.Distance(transform.position-offset, destination.position) > 1)
+		float timeTransitionStartTime = Level.timeSinceLevelStart;
+		while(Level.timeSinceLevelStart - timeTransitionStartTime < duration)
 		{
-			Vector3 delta = Vector3.Lerp(transform.position, destination.position+offset, Time.deltaTime*speed) - transform.position;
-
-			transform.position += delta;
+			float timeFraction = (Level.timeSinceLevelStart - timeTransitionStartTime) / duration;
+			transform.position = Vector3.Lerp(transform.position, destination.position + offset, timeFraction); 
+			camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, orthoSize, timeFraction);
 
 			yield return null;
 

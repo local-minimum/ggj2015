@@ -125,7 +125,6 @@ public class Swarmer : MonoBehaviour {
 
 
 	public void OnSlimeEnter() {
-		Debug.Log("InSlime");
 		forceFactor *= slimeForceFactor;
 		rigidbody2D.drag *= slimeDragFactor;
 	}

@@ -5,14 +5,13 @@ using System.Linq;
 public class RoomProperties : MonoBehaviour {
 
 	public Rect Bounds;
-	public bool StartRoom;
 	public Transform foodPoint;
 	public Transform swarmHolder;
+	public Transform leaderlessCameraPosition;
 	private HashSet<Swarmer> swarm = new HashSet<Swarmer>();
+	public float cameraSize = 30f;
 
 	void Awake () {
-		if(StartRoom)
-			Level.currentRoom = this;
 
 		foreach (Swarmer swarmer in swarmHolder.GetComponentsInChildren<Swarmer>())
 			swarm.Add(swarmer);

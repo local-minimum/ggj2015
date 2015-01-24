@@ -1,17 +1,32 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
-public class RoomManager : MonoBehaviour {
-	public RoomProperties [] Rooms;
+public class RoomManager : Singleton<RoomManager> {
+	private RoomProperties [] _Rooms;
 
 
-	// Use this for initialization
-	void Start () {
-	
+	public RoomProperties[] Rooms {
+
+		get {
+			if (_Rooms == null)
+				_Rooms = FindObjectsOfType<RoomProperties>();
+			return _Rooms;
+		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
+	private RoomProperties _currentRoom;
+
+	public static RoomProperties currentRoom {
+		get {
+			if (!Instance._currentRoom)
+					Instance._currentRoom = Instance.Rooms.OrderBy(r => Vector2.Distance(r.transform.position, Level.mainCamera.transform.position)).FirstOrDefault();
+			return Instance._currentRoom;
+		}
+
+		set {
+			Instance._currentRoom = value;
+		}
 	}
+
 }

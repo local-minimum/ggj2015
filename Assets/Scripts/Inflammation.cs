@@ -86,7 +86,6 @@ public class Inflammation : MonoBehaviour {
 
 	void TestCured() {
 		if (Level.timeSinceLevelStart - inflamationStart > noCurePeriod) {
-			Debug.Log(CureProbability());
 			if (Random.value < CureProbability() * Time.deltaTime)
 				SetNextInflamation();
 		}
