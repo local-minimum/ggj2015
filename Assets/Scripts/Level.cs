@@ -9,6 +9,8 @@ public class Level : Singleton<Level> {
 		}
 	}
 
+	public static RoomProperties currentRoom;
+
 	public static Camera mainCamera {
 		get {
 			return Camera.main;
