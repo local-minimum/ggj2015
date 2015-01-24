@@ -15,6 +15,7 @@ public class RelativeCamerapulsing : MonoBehaviour {
 	
 	// Update is called once per frame
 	IEnumerator Grow () {
+
 		while(camera.orthographicSize < BaseSize+Max-0.5)
 		{
 			Debug.Log("Growing");
@@ -26,6 +27,7 @@ public class RelativeCamerapulsing : MonoBehaviour {
 	}
 
 	IEnumerator Shrink () {
+
 		while(camera.orthographicSize > BaseSize+0.5)
 		{
 			Debug.Log("Shrinking");
