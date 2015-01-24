@@ -53,7 +53,6 @@ public class SwarmerActions : MonoBehaviour {
 	}
 
 	void DieFromEating() {
-		gameObject.SetActive(false);
-		SwarmLeaderController.RemoveMeFromPower(swarmer);
+		Level.MakeSwarmerDormant(swarmer);
 	}
 }
