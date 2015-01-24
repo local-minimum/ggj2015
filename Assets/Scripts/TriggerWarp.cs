@@ -20,8 +20,8 @@ public class TriggerWarp : MonoBehaviour {
 		if(col.tag == "Player")
 		{
 			col.transform.position = WarpPosition;
-			Camera.main.transform.position = CameraPosition+new Vector3(0,0,-10);
-			Camera.main.orthographicSize = CameraSize;
+			Level.mainCamera.transform.position = CameraPosition+new Vector3(0,0,-10);
+			Level.mainCamera.orthographicSize = CameraSize;
 		}
 	}
 }
