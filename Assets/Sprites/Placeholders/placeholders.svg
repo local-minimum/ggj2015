@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="placeholders.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.2"
-     inkscape:cx="94.847914"
-     inkscape:cy="1013.6445"
+     inkscape:zoom="7.919596"
+     inkscape:cx="327.5021"
+     inkscape:cy="924.5012"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -90,5 +90,14 @@
        inkscape:export-filename="D:\UserMartin\Documents\Game Projects\GGJ2015\Assets\Sprites\Placeholders\human.png"
        inkscape:export-xdpi="207.00999"
        inkscape:export-ydpi="207.00999" />
+    <path
+       style="fill:#aa4400;stroke:#803300;stroke-width:1.09027338px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 331.85334,29.628216 c -7.05255,4.841182 -13.14628,13.439725 -15.1262,22.853874 -2.32635,11.061308 4.63085,22.285891 5.04207,33.679391 0.31938,8.84897 -4.73742,18.221099 -2.01682,26.462379 3.13983,9.51133 12.87937,19.05541 21.43269,19.69059 10.60907,0.78786 18.66798,-9.88779 23.94589,-20.89343 4.51871,-9.42251 3.95354,-21.870032 2.01684,-32.476552 -1.6328,-8.942105 -9.47037,-15.111853 -11.09255,-24.056708 -0.92662,-5.109505 2.62633,-10.778426 1.0084,-15.63686 -1.84471,-5.539463 -6.31567,-10.278538 -11.09254,-12.028355 -4.54424,-1.664607 -9.99764,-0.422576 -14.11778,2.405671 z"
+       id="path2986"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssssssssss"
+       inkscape:export-filename="D:\UserMartin\Documents\Game Projects\GGJ2015\Assets\Sprites\Placeholders\potato.png"
+       inkscape:export-xdpi="336.79001"
+       inkscape:export-ydpi="336.79001" />
   </g>
 </svg>

@@ -6,6 +6,9 @@ public class SwarmerActions : MonoBehaviour {
 	bool hovering = false;
 	private Swarmer swarmer;
 
+	public float bitingCapacity;
+	public float biteSize;
+
 	// Use this for initialization
 	void Start () {
 		swarmer = GetComponentInParent<Swarmer>();
@@ -26,5 +29,31 @@ public class SwarmerActions : MonoBehaviour {
 
 	void OnMouseExit() {
 		hovering = false;
+	}
+
+	bool canBite {
+		get {
+			return bitingCapacity > 0.05f;
+		}
+	}
+
+	float GetBiteSize() {
+		float biteSize = Mathf.Clamp(this.biteSize * Time.deltaTime, 0, bitingCapacity);
+		bitingCapacity -= biteSize;
+		return biteSize;
+	}
+
+	void EatFood(Food food) {
+
+		if (canBite) {
+			if (food.isEdible(swarmer))
+				food.Eat(swarmer.SwarmerType, GetBiteSize());
+		} else
+			DieFromEating();
+	}
+
+	void DieFromEating() {
+		SwarmLeaderController.RemoveMeFromPower(swarmer);
+		Destroy(gameObject);
 	}
 }

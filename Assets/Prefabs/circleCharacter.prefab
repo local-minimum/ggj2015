@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 417562}
   - 58: {fileID: 5817562}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 114: {fileID: 11430192}
   - 50: {fileID: 5036212}
   - 114: {fileID: 11436212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: circleCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.0017242, y: -9.72305965, z: 0}
+  m_LocalPosition: {x: 17.3348274, y: -22.1685772, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 417562}
@@ -189,6 +189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e5b0ad80b9f274491b2a9625ecc558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bitingCapacity: 10
+  biteSize: 10
 --- !u!198 &19874526
 ParticleSystem:
   m_ObjectHideFlags: 1
