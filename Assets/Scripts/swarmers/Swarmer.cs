@@ -103,15 +103,17 @@ public class Swarmer : MonoBehaviour {
 
 	
 	public void AddForceLeader(Vector2 force) {
+		Vector3 pos = transform.position;
+
 		rigidbody2D.AddForce(wobble(force * forceFactor));
 		DirectLeaderEffect(force);
 		
 		foreach (Swarmer swarmer in swarm)
-			swarmer.AddForceFollower(force, this);
+			swarmer.AddForceFollower(force, pos);
 	}
 
-	public void AddForceFollower(Vector2 force, Swarmer leader) {
-		Vector2 relativeVector = transform.position - leader.transform.position;
+	public void AddForceFollower(Vector2 force, Vector3 leaderPosition) {
+		Vector2 relativeVector = transform.position - leaderPosition;
 		float x = Mathf.Sign(relativeVector.x) == Mathf.Sign(force.x) ? force.x * followerAnticipationForce : force.x;
 		float y = Mathf.Sign(relativeVector.y) == Mathf.Sign(force.y) ? force.y * followerAnticipationForce : force.y;
 		float absForceX = Mathf.Abs(force.x);
