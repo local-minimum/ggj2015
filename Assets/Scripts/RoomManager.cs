@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class RoomManager : MonoBehaviour {
-	public RoomProperties Rooms;
+	public RoomProperties [] Rooms;
 
 
 	// Use this for initialization

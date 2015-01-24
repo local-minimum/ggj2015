@@ -15,11 +15,11 @@ public class RelativeCamerapulsing : MonoBehaviour {
 	
 	// Update is called once per frame
 	IEnumerator Grow () {
-
-		while(camera.orthographicSize < BaseSize+Max-0.5)
+		StopCoroutine(Shrink ());
+		while(camera.orthographicSize < BaseSize+Max-0.5f)
 		{
 			Debug.Log("Growing");
-			camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, BaseSize+Speed, Time.deltaTime*Speed);
+			camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, BaseSize+Max, Time.deltaTime*Speed);
 			yield return null;
 		}
 
@@ -27,8 +27,8 @@ public class RelativeCamerapulsing : MonoBehaviour {
 	}
 
 	IEnumerator Shrink () {
-
-		while(camera.orthographicSize > BaseSize+0.5)
+		StopCoroutine(Grow());
+		while(camera.orthographicSize > BaseSize+0.5f)
 		{
 			Debug.Log("Shrinking");
 			camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, BaseSize, Time.deltaTime*Speed);

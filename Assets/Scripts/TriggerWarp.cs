@@ -5,8 +5,10 @@ public class TriggerWarp : MonoBehaviour {
 	public Vector3 WarpPosition;
 	public Vector3 CameraPosition;
 	public float CameraSize;
-	public RoomProperties Room;
-	
+	public RoomProperties DestinationRoom;
+	public RoomProperties ThisRoom;
+
+
 	void OnDrawGizmosSelected () {
 		Gizmos.color = Color.green;
 		Gizmos.DrawLine(transform.position, WarpPosition);
@@ -17,16 +19,23 @@ public class TriggerWarp : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
+
+		Vector3 RelativeDist = col.transform.position-transform.position;
+
 		if(col.gameObject == SwarmLeaderController.Leader.gameObject)
 		{
-			col.transform.position = WarpPosition;
+			ThisRoom.RemoveSwarmer(col.GetComponent<Swarmer>());
+			DestinationRoom.AddSwarmer(col.GetComponent<Swarmer>());
+			col.transform.position = WarpPosition+RelativeDist;
 			Level.mainCamera.transform.position = CameraPosition+new Vector3(0,0,-10);
 			Level.mainCamera.orthographicSize = CameraSize;
-			Level.currentRoom = Room;
+			Level.currentRoom = DestinationRoom;
 		}
 		if(col.tag == "Microbe")
 		{
-			col.transform.position = WarpPosition;
+			ThisRoom.RemoveSwarmer(col.GetComponent<Swarmer>());
+			DestinationRoom.AddSwarmer(col.GetComponent<Swarmer>());
+			col.transform.position = WarpPosition+RelativeDist;
 		}
 	}
 }
