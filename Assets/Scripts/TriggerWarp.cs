@@ -23,23 +23,31 @@ public class TriggerWarp : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
-
 		Vector3 RelativeDist = col.transform.position-transform.position;
+		Swarmer swarmer = col.GetComponent<Swarmer>();
 
-		if(SwarmLeaderController.Leader != null && col.gameObject == SwarmLeaderController.Leader.gameObject)
-		{
-			ThisRoom.RemoveSwarmer(col.GetComponent<Swarmer>());
-			DestinationRoom.AddSwarmer(col.GetComponent<Swarmer>());
-			col.transform.position = WarpPosition.position + RelativeDist;
-			Level.mainCamera.transform.position = CameraPosition.position + new Vector3(0,0,-10);
-			Level.mainCamera.orthographicSize = CameraSize;
-			Level.currentRoom = DestinationRoom;
+		if (swarmer) {
+			if(swarmer == SwarmLeaderController.Leader)
+			{
+				TransferSwarmer(swarmer, RelativeDist);
+				TransferCamera();
+			} else
+				TransferSwarmer(swarmer, RelativeDist);
+
 		}
-		if(col.tag == "Microbe")
-		{
-			ThisRoom.RemoveSwarmer(col.GetComponent<Swarmer>());
-			DestinationRoom.AddSwarmer(col.GetComponent<Swarmer>());
-			col.transform.position = WarpPosition.position + RelativeDist;
-		}
+	
+	}
+
+	void TransferCamera() {
+		Level.mainCamera.transform.position = CameraPosition.position + new Vector3(0,0,-10);
+		Level.mainCamera.orthographicSize = CameraSize;
+		Level.currentRoom = DestinationRoom;
+
+	}
+
+	void TransferSwarmer(Swarmer swarmer, Vector3 relativeDist) {
+		ThisRoom.RemoveSwarmer(swarmer);
+		DestinationRoom.AddSwarmer(swarmer);
+		col.transform.position = WarpPosition.position + relativeDist;
 	}
 }
