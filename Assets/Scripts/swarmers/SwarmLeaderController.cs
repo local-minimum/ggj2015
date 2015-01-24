@@ -16,8 +16,13 @@ public class SwarmLeaderController : Singleton<SwarmLeaderController> {
 	
 	// Update is called once per frame
 	void Update () {
+		Vector2 force;
+
 		if (_leader) {
-			Vector2 force = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+			if (Input.GetMouseButton(0)) {
+				force = (Level.pointerPositionInWorld - (Vector2) leader.transform.position).normalized;
+			} else
+				force = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 			_leader.AddForceLeader(force * Time.deltaTime * forceFactor);
 		}
 

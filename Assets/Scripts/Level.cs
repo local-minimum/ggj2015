@@ -16,4 +16,16 @@ public class Level : Singleton<Level> {
 			return Camera.main;
 		}
 	}
+
+	public static Vector2 pointerPositionInWorld {
+		get {
+			return mainCamera.ScreenToWorldPoint(pointerPosition);
+		}
+	}
+
+	public static Vector3 pointerPosition {
+		get {
+			return Input.mousePosition;
+		}
+	}
 }
