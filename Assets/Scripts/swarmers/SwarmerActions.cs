@@ -21,7 +21,7 @@ public class SwarmerActions : MonoBehaviour {
 
 	void OnMouseEnter() {
 		hovering = true;
-		Debug.Log(string.Format("{0} is hovered", gameObject));
+//		Debug.Log(string.Format("{0} is hovered", gameObject));
 	}
 
 	void OnMouseExit() {

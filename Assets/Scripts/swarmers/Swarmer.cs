@@ -21,6 +21,12 @@ public class Swarmer : MonoBehaviour {
 	public ParticleSystem followerEffect;
 
 	[Range(0, 1)]
+	public float slimeDragFactor = 0.5f;
+
+	[Range(0, 1)]
+	public float slimeForceFactor = 0.8f;
+
+	[Range(0, 1)]
 	public float followerAnticipationForce = 0.4f;
 
 	public int NumberOfNeighbours {
@@ -110,12 +116,19 @@ public class Swarmer : MonoBehaviour {
 		float absForceX = Mathf.Abs(force.x);
 		float absForceY = Mathf.Abs(force.y);
 
-//		float angleFactor = -1 * Vector2.Dot(force.normalized, relativeVector.normalized);
-//		angleFactor += 0.5f;
-//		angleFactor = Mathf.Clamp(angleFactor, 0, 1.1f);
-//		Debug.Log(angleFactor);
 		rigidbody2D.AddForce(wobble(new Vector2(Mathf.Clamp(x, -absForceX, absForceX), Mathf.Clamp(y, -absForceY, absForceY)) * forceFactor));
-//		Debug.DrawRay(transform.position, force.normalized, Color.cyan, force.magnitude * forceFactor * angleFactor);
+
 	}
 
+
+	public void OnSlimeEnter() {
+		Debug.Log("InSlime");
+		forceFactor *= slimeForceFactor;
+		rigidbody2D.drag *= slimeDragFactor;
+	}
+
+	public void OnSlimeExit() {
+		forceFactor /= slimeForceFactor;
+		rigidbody2D.drag /= slimeDragFactor;
+	}
 }
