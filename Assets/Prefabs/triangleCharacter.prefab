@@ -90,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.691927, y: -23.0385475, z: 0}
+  m_LocalPosition: {x: 10.2136307, y: 1.2289238, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 417562}
@@ -168,7 +168,7 @@ Animator:
   m_GameObject: {fileID: 130192}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9ab3ca4184d63438ebbfe1c9c2f3b29a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5ce66e885af374b8fb60e062e15cbec6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -191,7 +191,7 @@ MonoBehaviour:
   wobbleAmplitude: 1
   leaderEffect: {fileID: 19874528}
   followerEffect: {fileID: 19874526}
-  slimeDragFactor: .100000001
+  slimeDragFactor: .150000006
   slimeForceFactor: .400000006
   followerAnticipationForce: .5
 --- !u!114 &11436212
@@ -2395,7 +2395,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13db73caff1e5477d9de6b81a0ffb8cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8e0752a7e073b449489e4015d39c4bda, type: 3}
   m_Color: {r: 1, g: .988235295, b: .573529422, a: 1}
 --- !u!1001 &100100000
 Prefab:
