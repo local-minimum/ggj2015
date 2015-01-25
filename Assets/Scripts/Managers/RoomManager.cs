@@ -37,4 +37,16 @@ public class RoomManager : Singleton<RoomManager> {
 	public static RoomProperties GetRoomClosestTO(Transform place) {
 		return Instance.Rooms.OrderBy(r => Vector2.Distance(r.transform.position, place.position)).FirstOrDefault();
 	}
+
+	public IEnumerable<RoomProperties> roomsWithFood {
+		get {
+			return Rooms.Where(r => r.hasFood);
+		}
+	}
+
+	public IEnumerable<RoomProperties> roomsWithInfection {
+		get {
+			return Rooms.Where(r => r.inflammated);
+		}
+	}
 }

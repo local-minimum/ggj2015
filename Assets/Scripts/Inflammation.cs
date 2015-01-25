@@ -11,13 +11,25 @@ public class Inflammation : MonoBehaviour {
 	private RoomProperties room;
 
 	public Swarmer.SwarmerTypes[] inflamationTypes;
-	private Swarmer.SwarmerTypes inflamationType;
+	private Swarmer.SwarmerTypes _inflamationType;
+
+	public Swarmer.SwarmerTypes inflamationType {
+		get {
+			return _inflamationType;
+		}
+	}
 
 	public float averageBetweenInflammationTime = 10f;
 	public float betweenInflammationTimeVariation = 5f;
 	private float nextInflammation;
 	private float inflamationStart;
-	private bool inflamated = false;
+	private bool _inflamated = false;
+
+	public bool inflammated {
+		get {
+			return _inflamated;
+		}
+	}
 
 	public float swarmerDuplicationP = 0.1f;
 	public float spontaneousGenerationP = 0.2f;
@@ -40,7 +52,7 @@ public class Inflammation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (inflamated) {
+		if (_inflamated) {
 			SpontaneousGeneration();
 			SwarmerDuplication();
 			TestCured();
@@ -56,7 +68,7 @@ public class Inflammation : MonoBehaviour {
 	}
 
 	void SwarmerDuplication() {
-		Swarmer[] swarmers = room.GetSwarmerByType(inflamationType).ToArray();
+		Swarmer[] swarmers = room.GetSwarmerByType(_inflamationType).ToArray();
 		foreach (Swarmer swarmer in swarmers) {
 			if (Random.value < swarmerDuplicationP * Time.deltaTime)
 				NewSpawn(swarmer.transform.position);
@@ -65,8 +77,8 @@ public class Inflammation : MonoBehaviour {
 	}
 
 	void NewSpawn(Vector3 position) {
-		if (Level.IsAvailable(inflamationType)) {
-			Swarmer swarmer = Level.GetSwarmer(inflamationType);
+		if (Level.IsAvailable(_inflamationType)) {
+			Swarmer swarmer = Level.GetSwarmer(_inflamationType);
 			swarmer.transform.position = position + new Vector3(Random.Range(-spawnOffsetMax, spawnOffsetMax), Random.Range(-spawnOffsetMax, spawnOffsetMax));
 			room.AddSwarmer(swarmer);
 
@@ -75,7 +87,7 @@ public class Inflammation : MonoBehaviour {
 
 	float CureProbability() {
 		float swarmers = room.swarmerCount;
-		float fraction = room.GetSwarmerByType(inflamationType).Count() / swarmers;
+		float fraction = room.GetSwarmerByType(_inflamationType).Count() / swarmers;
 		float inflammationDuration = Level.timeSinceLevelStart - inflamationStart;
 
 		if (fraction == 0f)
@@ -92,14 +104,14 @@ public class Inflammation : MonoBehaviour {
 	}
 
 	void SetOutbreak() {
-		inflamationType = inflamationTypes[Random.Range(0, inflamationTypes.Length)];
+		_inflamationType = inflamationTypes[Random.Range(0, inflamationTypes.Length)];
 		inflamationStart = Level.timeSinceLevelStart;
 		ActivateEffects();
-		inflamated = true;
+		_inflamated = true;
 	}
 
 	Material getInflammationEffectMaterial() {
-		return inflammationParticleMaterials[System.Array.IndexOf(inflamationTypes, inflamationType)];
+		return inflammationParticleMaterials[System.Array.IndexOf(inflamationTypes, _inflamationType)];
 	}
 
 	void ActivateEffects() {
@@ -114,7 +126,7 @@ public class Inflammation : MonoBehaviour {
 	}
 
 	void SetNextInflamation() {
-		inflamated = false;
+		_inflamated = false;
 		nextInflammation = Level.timeSinceLevelStart + averageBetweenInflammationTime + Random.Range(-betweenInflammationTimeVariation, betweenInflammationTimeVariation);
 	}
 }
