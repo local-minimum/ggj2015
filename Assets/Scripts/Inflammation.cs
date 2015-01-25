@@ -17,7 +17,7 @@ public class Inflammation : MonoBehaviour {
 		get {
 			return _inflamationType;
 		}
-	}
+	}	
 
 	public float averageBetweenInflammationTime = 10f;
 	public float betweenInflammationTimeVariation = 5f;
@@ -61,9 +61,15 @@ public class Inflammation : MonoBehaviour {
 		}
 	}
 
+	public Vector3 RandomSpawnPosition {
+		get {
+			return spawningPositions[Random.Range(0, spawningPositions.Length)].position;
+		}
+	}
+
 	void SpontaneousGeneration() {
 		if (Random.value < spontaneousGenerationP * Time.deltaTime)
-			NewSpawn(spawningPositions[Random.Range(0, spawningPositions.Length)].position);
+			NewSpawn(RandomSpawnPosition);
 
 	}
 

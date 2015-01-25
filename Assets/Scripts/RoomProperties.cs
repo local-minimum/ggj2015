@@ -13,10 +13,20 @@ public class RoomProperties : MonoBehaviour {
 	private HashSet<Swarmer> swarm = new HashSet<Swarmer>();
 	public float cameraSize = 30f;
 
-	void Awake () {
+	void Start () {
 		inflammation = GetComponent<Inflammation>();
 		foreach (Swarmer swarmer in swarmHolder.GetComponentsInChildren<Swarmer>())
 			swarm.Add(swarmer);
+		if (this == RoomManager.Instance.stomach)
+			StartGutPopulation();
+	}
+
+	void StartGutPopulation() {
+		while (swarm.Count() < 10) {
+			Swarmer swarmer = Level.GetRandomSwarmer();
+			swarmer.transform.position = inflammation.RandomSpawnPosition;
+			AddSwarmer(swarmer);
+		}
 	}
 
 	void OnDrawGizmosSelected () {
