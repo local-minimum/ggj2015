@@ -7,12 +7,13 @@ public class TriggerWarp : MonoBehaviour {
 	public Transform warpTarget;
 	public Transform CameraPosition;
 	public float CameraSize;
-	public RoomProperties DestinationRoom;
+	private RoomProperties DestinationRoom;
 	private RoomProperties ThisRoom;
 
 
 	void Start() {
 		ThisRoom = GetComponentInParent<RoomProperties>();
+		DestinationRoom = RoomManager.GetRoomClosestTO(warpTarget);
 	}
 
 	void OnDrawGizmosSelected () {

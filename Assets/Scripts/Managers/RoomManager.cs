@@ -20,7 +20,7 @@ public class RoomManager : Singleton<RoomManager> {
 	public static RoomProperties currentRoom {
 		get {
 			if (!Instance._currentRoom)
-					Instance._currentRoom = Instance.Rooms.OrderBy(r => Vector2.Distance(r.transform.position, Level.mainCamera.transform.position)).FirstOrDefault();
+					Instance._currentRoom = GetRoomClosestTO(Level.mainCamera.transform);
 			return Instance._currentRoom;
 		}
 
@@ -29,4 +29,7 @@ public class RoomManager : Singleton<RoomManager> {
 		}
 	}
 
+	public static RoomProperties GetRoomClosestTO(Transform place) {
+		return Instance.Rooms.OrderBy(r => Vector2.Distance(r.transform.position, place.position)).FirstOrDefault();
+	}
 }
