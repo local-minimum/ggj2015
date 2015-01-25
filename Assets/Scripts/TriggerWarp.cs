@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class TriggerWarp : MonoBehaviour {
-	public Transform WarpPosition;
+	public Transform warpSource;
+	public Transform warpMidpoint;
+	public Transform warpTarget;
 	public Transform CameraPosition;
 	public float CameraSize;
 	public RoomProperties DestinationRoom;
@@ -15,10 +17,10 @@ public class TriggerWarp : MonoBehaviour {
 
 	void OnDrawGizmosSelected () {
 		Gizmos.color = Color.green;
-		Gizmos.DrawLine(transform.position, WarpPosition.position);
+		Gizmos.DrawLine(warpSource.position, warpTarget.position);
 
 		Gizmos.color = new Color(0,0,1,0.1f);
-		Gizmos.DrawCube(CameraPosition.position, new Vector3(1.6f, 0.9f, 1)*CameraSize*2.2f);
+		Gizmos.DrawCube(warpSource.transform.position, new Vector3(1.6f, 0.9f, 1)*CameraSize*2.2f);
 	
 	}
 
@@ -39,15 +41,13 @@ public class TriggerWarp : MonoBehaviour {
 	}
 
 	void TransferCamera() {
-		Level.mainCamera.transform.position = CameraPosition.position + new Vector3(0,0,-10);
-		Level.mainCamera.orthographicSize = CameraSize;
-		Level.currentRoom = DestinationRoom;
+		Level.mainCameraControl.MoveCameraToVia(warpSource, warpMidpoint, warpTarget, CameraSize, DestinationRoom.cameraSize / Level.mainCameraControl.leaderZoom, 1);
 
 	}
 
 	void TransferSwarmer(Swarmer swarmer, Vector3 relativeDist) {
 		ThisRoom.RemoveSwarmer(swarmer);
 		DestinationRoom.AddSwarmer(swarmer);
-		col.transform.position = WarpPosition.position + relativeDist;
+		swarmer.transform.position = warpTarget.position + relativeDist;
 	}
 }

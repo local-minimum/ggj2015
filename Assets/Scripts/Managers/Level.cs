@@ -57,11 +57,20 @@ public class Level : Singleton<Level> {
 		}
 	}
 
-	public static RoomProperties currentRoom;
 
 	public static Camera mainCamera {
 		get {
 			return Camera.main;
+		}
+	}
+
+	private CameraControl _mainCameraControl;
+
+	public static CameraControl mainCameraControl {
+		get {
+			if (!Instance._mainCameraControl)
+				Instance._mainCameraControl = mainCamera.GetComponent<CameraControl>();
+			return Instance._mainCameraControl;
 		}
 	}
 
