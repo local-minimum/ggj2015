@@ -56,7 +56,7 @@ public class FoodRoomMovement : MonoBehaviour {
 	}
 
 	public void GoToRandom() {
-		Debug.Log("Escaping");
+
 		StartCoroutine(_PhaseOutFood(RoomManager.GetRandomOtherRoom(room).foodPoint));
 	}
 
