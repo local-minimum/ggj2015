@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.UI;
 
 public class Level : Singleton<Level> {
 
 	public int maxSwarmersPerType = 500;
 	public Transform dormantSwarmersHolder;
+	public Text clock;
 
 	public List<Swarmer> swarmerTypes = new List<Swarmer>();
 
@@ -23,6 +25,11 @@ public class Level : Singleton<Level> {
 		InitEmptySwarmerLists();
 		FindAllExistingSwarmers();
 		FillUpWithInactiveSwarmers();
+	}
+
+
+	void Update() {
+		clock.text = string.Format("{0}", Mathf.Round(Level.timeSinceLevelStart));
 	}
 
 	void InitEmptySwarmerLists() {
