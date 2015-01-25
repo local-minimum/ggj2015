@@ -20,8 +20,6 @@ public class MapRoom : MonoBehaviour {
 	// Use this for initialization
 	public void OnClick () {
 
-		GetComponent<Button>().image.color = currentRoomColor;
-
 //		if(SwarmLeaderController.Leader == null)
 //		{
 //			Level.mainCameraControl.MoveCameraTo(moveTo, camSize, moveSpeed);
@@ -39,7 +37,9 @@ public class MapRoom : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(RoomManager.currentRoom != ClosestRoom)
+		if(RoomManager.currentRoom == ClosestRoom)
+			GetComponent<Button>().image.color = currentRoomColor;
+		else
 			GetComponent<Button>().image.color = baseRoomColor;
 	}
 }

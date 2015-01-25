@@ -16,15 +16,18 @@ public class TriggerWarp : MonoBehaviour {
 		DestinationRoom = RoomManager.GetRoomClosestTO(warpTarget);
 	}
 
-	void OnDrawGizmosSelected () {
+	void OnDrawGizmos () {
 		Gizmos.color = Color.green;
-		Gizmos.DrawLine(warpSource.position, warpTarget.position);
-
-		Gizmos.color = new Color(0,0,1,0.1f);
-		Gizmos.DrawCube(warpSource.transform.position, new Vector3(1.6f, 0.9f, 1)*CameraSize*2.2f);
+		Gizmos.DrawLine(warpSource.position, warpMidpoint.position);
+		Gizmos.DrawLine(warpMidpoint.position, warpTarget.position);
 	
 	}
 
+	void OnDrawGizmosSelected () {
+		Gizmos.color = new Color(0,0,1,0.1f);
+		Gizmos.DrawCube(warpSource.transform.position, new Vector3(1.6f, 0.9f, 1)*CameraSize*2.2f);
+	}
+		
 	void OnTriggerEnter2D(Collider2D col) {
 		Vector3 RelativeDist = col.transform.position-transform.position;
 		Swarmer swarmer = col.GetComponent<Swarmer>();
@@ -34,6 +37,7 @@ public class TriggerWarp : MonoBehaviour {
 			{
 				TransferSwarmer(swarmer, RelativeDist);
 				TransferCamera();
+				RoomManager.currentRoom = DestinationRoom;
 			} else
 				TransferSwarmer(swarmer, RelativeDist);
 
