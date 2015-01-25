@@ -15,7 +15,7 @@ public class FoodRoomMovement : MonoBehaviour {
 	public float foodEffectDuration = 1f;
 	bool phasing = false;
 
-	float roomChangingP = 0.2f;
+	public float roomChangingP = 0.2f;
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +26,7 @@ public class FoodRoomMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (ChangeLocation()) {
-
+			GoToRandom();
 		} else if (!phasing && room) {
 			AddForce();
 			AddTorque();
@@ -34,7 +34,7 @@ public class FoodRoomMovement : MonoBehaviour {
 	}
 
 	bool ChangeLocation() {
-		return roomChangingP * Time.deltaTime < Random.value;
+		return roomChangingP * Time.deltaTime > Random.value;
 	}
 
 	void AddForce() {
@@ -56,7 +56,8 @@ public class FoodRoomMovement : MonoBehaviour {
 	}
 
 	public void GoToRandom() {
-		StartCoroutine(_PhaseOutFood(RoomManager.GetRandomOtherRoom(room.foodPoint)));
+		Debug.Log("Escaping");
+		StartCoroutine(_PhaseOutFood(RoomManager.GetRandomOtherRoom(room).foodPoint));
 	}
 
 	IEnumerator<WaitForSeconds> _PhaseOutFood(Transform foodTarget) {
@@ -64,7 +65,7 @@ public class FoodRoomMovement : MonoBehaviour {
 		phasing = true;
 		float startTime = Level.timeSinceLevelStart;
 		while (Level.timeSinceLevelStart - startTime < foodEffectDuration) {
-			transform.localScale = Vector3.one * Mathf.Lerp(transform.localScale.sqrMagnitude, 0, (Level.timeSinceLevelStart - startTime) / foodEffectDuration);
+			transform.localScale = Vector3.one * Mathf.Lerp(1, 0, (Level.timeSinceLevelStart - startTime) / foodEffectDuration);
 			yield return null;
 		}
 		transform.localScale = Vector3.zero;
@@ -81,7 +82,7 @@ public class FoodRoomMovement : MonoBehaviour {
 	IEnumerator<WaitForSeconds> _PhaseInFood() {
 		float startTime = Level.timeSinceLevelStart;
 		while (Level.timeSinceLevelStart - startTime < foodEffectDuration) {
-			transform.localScale = Vector3.one * Mathf.Lerp(transform.localScale.sqrMagnitude, 1, (Level.timeSinceLevelStart - startTime) / foodEffectDuration);
+			transform.localScale = Vector3.one * Mathf.Lerp(0, 1, (Level.timeSinceLevelStart - startTime) / foodEffectDuration);
 			yield return null;
 		}
 		transform.localScale = Vector3.one;

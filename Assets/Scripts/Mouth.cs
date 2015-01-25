@@ -50,7 +50,7 @@ public class Mouth : MonoBehaviour {
 			anim.SetTrigger("Eat");
 		Level.registerNewFood(food.GetComponent<Food>());
 
-		food.GetComponent<FoodRoomMovement>().GoMouthToStomach();
+		food.GetComponent<FoodRoomMovement>().GoToStomach();
 
 	}
 		            

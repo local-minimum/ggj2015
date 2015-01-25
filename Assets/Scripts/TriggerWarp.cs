@@ -34,6 +34,7 @@ public class TriggerWarp : MonoBehaviour {
 			{
 				TransferSwarmer(swarmer, RelativeDist);
 				TransferCamera();
+				RoomManager.currentRoom = DestinationRoom;
 			} else
 				TransferSwarmer(swarmer, RelativeDist);
 
