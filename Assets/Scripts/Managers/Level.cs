@@ -128,7 +128,7 @@ public class Level : Singleton<Level> {
 
 	public float fractionOfFoodDeath {
 		get {
-			return Instance.foods.Sum(f => f.gameObject.activeSelf ? 1 : 0) / Instance.deathByFoodCount;
+			return (float) Instance.foods.Sum(f => f.gameObject.activeSelf ? 1 : 0) / Instance.deathByFoodCount;
 		}
 	}
 
