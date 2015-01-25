@@ -8,6 +8,8 @@ public class RoomProperties : MonoBehaviour {
 	public Transform foodPoint;
 	public Transform swarmHolder;
 	public Transform leaderlessCameraPosition;
+
+
 	private HashSet<Swarmer> swarm = new HashSet<Swarmer>();
 	public float cameraSize = 30f;
 

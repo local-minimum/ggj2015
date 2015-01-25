@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 
 public class RoomManager : Singleton<RoomManager> {
-	private RoomProperties [] _Rooms;
+	private List<RoomProperties> _Rooms = new List<RoomProperties>();
 	public RoomProperties stomach;
 
-	public RoomProperties[] Rooms {
+	public List<RoomProperties> Rooms {
 
 		get {
-			if (_Rooms == null)
-				_Rooms = FindObjectsOfType<RoomProperties>();
+			if (_Rooms.Count() == 0)
+				_Rooms.AddRange(FindObjectsOfType<RoomProperties>());
 			return _Rooms;
 		}
 	}
@@ -27,6 +27,11 @@ public class RoomManager : Singleton<RoomManager> {
 		set {
 			Instance._currentRoom = value;
 		}
+	}
+
+	public static RoomProperties GetRandomOtherRoom(RoomProperties currentRoom) {
+		IEnumerable<RoomProperties> rooms = Instance.Rooms.Where(r => r!=currentRoom);
+		return rooms.ToArray()[Random.Range(0, rooms.Count())];
 	}
 
 	public static RoomProperties GetRoomClosestTO(Transform place) {

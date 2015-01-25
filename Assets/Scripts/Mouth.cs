@@ -7,6 +7,7 @@ public class Mouth : MonoBehaviour {
 	public Transform foodSpawnPosition;
 	public float baseTimeBeweenSpawns = 5f;
 	public float eatingTime = 3f;
+	private Animator anim;
 
 	[Range(0, 1)]
 	public float spawnTimeVariation = 0.1f;
@@ -20,11 +21,12 @@ public class Mouth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (nextSpawn < Level.timeSinceLevelStart);
+		if (nextSpawn < Level.timeSinceLevelStart)
+			SpawnFood();
 	}
 
 	void SetNextSpawnTime() {
-		nextSpawn = baseTimeBeweenSpawns * (1 + Random.Range(-spawnTimeVariation, spawnTimeVariation)) / Level.currentDifficulty;
+		nextSpawn = baseTimeBeweenSpawns * (1 + Random.Range(-spawnTimeVariation, spawnTimeVariation)) / Level.currentDifficulty + Level.timeSinceLevelStart;
 	}
 
 	void SpawnFood() {
@@ -43,7 +45,13 @@ public class Mouth : MonoBehaviour {
 			food.transform.position = Vector3.Lerp(foodSpawnPosition.transform.position, transform.position, (Level.timeSinceLevelStart - startTime) / eatingTime);
 			yield return null;
 		}
+
+		if (anim)
+			anim.SetTrigger("Eat");
 		Level.registerNewFood(food.GetComponent<Food>());
+
+		food.GetComponent<FoodRoomMovement>().GoToStomach();
+
 	}
 		            
 }
