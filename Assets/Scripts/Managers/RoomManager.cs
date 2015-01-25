@@ -4,7 +4,7 @@ using System.Linq;
 
 public class RoomManager : Singleton<RoomManager> {
 	private RoomProperties [] _Rooms;
-
+	public RoomProperties stomach;
 
 	public RoomProperties[] Rooms {
 

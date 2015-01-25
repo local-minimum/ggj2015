@@ -11,6 +11,14 @@ public class Level : Singleton<Level> {
 
 	private Dictionary<Swarmer.SwarmerTypes, List<Swarmer>> swarmPool = new Dictionary<Swarmer.SwarmerTypes, List<Swarmer>>();
 
+	public int deathByMicrobes = 150;
+	public int deathByFoodCount = 20;
+	private List<Food> foods = new List<Food>(); 
+
+	[Range(1, 2)]
+	public float difficultyAmplifier = 1.1f;
+	public float difficultySurvivalExpectency = 60f;
+
 	void Start() {
 		InitEmptySwarmerLists();
 		FindAllExistingSwarmers();
@@ -106,5 +114,31 @@ public class Level : Singleton<Level> {
 		Swarmer swarmer = Instance.swarmPool[swarmerType].FirstOrDefault(s => !s.gameObject.activeSelf && s.SwarmerType == swarmerType);
 		swarmer.gameObject.SetActive(true);
 		return swarmer;
+	}
+
+	public static float currentDifficulty {
+		get {
+			return Mathf.Pow((Instance.difficultySurvivalExpectency * 0.5f + timeSinceLevelStart) / Instance.difficultySurvivalExpectency, Instance.difficultyAmplifier);
+		}
+	}
+
+	public static void registerNewFood(Food food) {
+		Instance.foods.Add(food);
+	}
+
+	public float fractionOfFoodDeath {
+		get {
+			return Instance.foods.Sum(f => f.gameObject.activeSelf ? 1 : 0) / Instance.deathByFoodCount;
+		}
+	}
+
+	public float fractionOfMicrobeDeath {
+		get {
+			float dormant = 0;
+			foreach (KeyValuePair<Swarmer.SwarmerTypes, List<Swarmer>> kvp in Instance.swarmPool)
+				dormant += kvp.Value.Sum(s => s.gameObject.activeSelf ? 1 : 0);
+
+			return dormant / Instance.deathByMicrobes;
+		}
 	}
 }
