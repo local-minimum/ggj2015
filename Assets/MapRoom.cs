@@ -22,6 +22,10 @@ public class MapRoom : MonoBehaviour {
 	public Sprite Triangle;
 	public Sprite Square;
 
+	public Color CircleColor;
+	public Color TriangleColor;
+	public Color SquareColor; 
+
 	void Start () {
 
 		foreach(Transform child in transform)
@@ -81,12 +85,21 @@ public class MapRoom : MonoBehaviour {
 			Microbe.enabled = true;
 
 			if(ClosestRoom.inflammationType == Swarmer.SwarmerTypes.CIRCLE)
+			{
 				Microbe.sprite = Circle;
+				Microbe.color = CircleColor;
+			}
 			if(ClosestRoom.inflammationType == Swarmer.SwarmerTypes.TRIANGLE)
+			{
 				Microbe.sprite = Triangle;
+				Microbe.color = TriangleColor;
+			}
 			if(ClosestRoom.inflammationType == Swarmer.SwarmerTypes.SQUARE)
+			{
 				Microbe.sprite = Square;
-			//StatusColor = Color.red;
+				Microbe.color = SquareColor;
+			}
+				//StatusColor = Color.red;
 		}
 		else
 			Microbe.enabled = false;
