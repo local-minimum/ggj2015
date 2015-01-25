@@ -9,12 +9,12 @@ public class RoomProperties : MonoBehaviour {
 	public Transform swarmHolder;
 	public Transform leaderlessCameraPosition;
 
-
+	private Inflammation inflammation;
 	private HashSet<Swarmer> swarm = new HashSet<Swarmer>();
 	public float cameraSize = 30f;
 
 	void Awake () {
-
+		inflammation = GetComponent<Inflammation>();
 		foreach (Swarmer swarmer in swarmHolder.GetComponentsInChildren<Swarmer>())
 			swarm.Add(swarmer);
 	}
@@ -40,6 +40,24 @@ public class RoomProperties : MonoBehaviour {
 	public float swarmerCount {
 		get {
 			return swarm.Count();
+		}
+	}
+
+	public bool inflammated {
+		get {
+			return inflammation.inflammated;
+		}
+	}
+
+	public Swarmer.SwarmerTypes inflammationType {
+		get {
+			return inflammation.inflamationType;
+		}
+	}
+
+	public bool hasFood {
+		get {
+			return foodPoint.childCount > 0;
 		}
 	}
 }

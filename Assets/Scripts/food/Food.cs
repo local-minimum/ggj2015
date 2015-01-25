@@ -25,6 +25,7 @@ public class Food : MonoBehaviour {
 			FoodComponent instance = ((GameObject) Instantiate(foodComponents[i].gameObject)).GetComponent<FoodComponent>();
 			instance.transform.parent = foodComponentPositions[i];
 			instance.transform.localPosition = Vector3.zero;
+			instance.transform.localScale = Vector3.one;
 			foodComponents[i] = instance;
 		}
 
