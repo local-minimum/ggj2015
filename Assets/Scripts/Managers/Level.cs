@@ -30,6 +30,10 @@ public class Level : Singleton<Level> {
 
 	void Update() {
 		clock.text = string.Format("{0}", Mathf.Round(Level.timeSinceLevelStart));
+		if (Input.GetKeyDown(KeyCode.R))
+			Application.LoadLevel(Application.loadedLevelName);
+		if (Input.GetKeyDown(KeyCode.Q))
+			Application.Quit();
 	}
 
 	void InitEmptySwarmerLists() {
