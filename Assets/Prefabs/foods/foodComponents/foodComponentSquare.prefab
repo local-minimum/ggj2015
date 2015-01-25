@@ -13,7 +13,7 @@ GameObject:
   - 198: {fileID: 19882486}
   - 199: {fileID: 19982486}
   m_Layer: 10
-  m_Name: foodComponentCircle
+  m_Name: foodComponentSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fbcf63aa9412624b85f05f99404c6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodType: 1
+  foodType: 2
   startingEnergy: 50
 --- !u!198 &19882486
 ParticleSystem:
@@ -1143,8 +1143,8 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1458867563
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 06f781b3ab406b144aa968adb6af13d9, type: 3}
-  m_Color: {r: .573529422, g: .664705873, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 40bbf6f2afc4f9648b02f6d0f968d566, type: 3}
+  m_Color: {r: 1, g: .573529422, b: .670588255, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

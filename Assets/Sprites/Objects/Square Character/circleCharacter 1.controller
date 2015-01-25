@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: circleCharacter
+  m_Name: circleCharacter 1
   serializedVersion: 2
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -29,9 +29,9 @@ State:
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: e3a0c26950644407e80125f96d662477, type: 2}
+  - {fileID: 7400000, guid: 6542f922c2c35914e82cf15fa7be779c, type: 2}
   m_ParentStateMachine: {fileID: 110758020}
-  m_Position: {x: 120, y: 108, z: 0}
+  m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 

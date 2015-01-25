@@ -85,6 +85,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FoodPrefabs:
   - {fileID: 190464, guid: 8cd19584dbf60914ebda957702493f75, type: 2}
+  - {fileID: 190464, guid: 3359f23e1c501c843aaace5efc662f2a, type: 2}
+  - {fileID: 190464, guid: b2d3648b99e4d7648bb24c6e92e411b4, type: 2}
+  - {fileID: 190464, guid: da520769ba1e7d24baaba029b4061e35, type: 2}
+  - {fileID: 190464, guid: 274dc1617bdb2d04cb53397b6575d0ce, type: 2}
+  - {fileID: 190464, guid: e194d5fcecc4e5d41afb781d5d7f6683, type: 2}
+  - {fileID: 190464, guid: a8c59c07d151ec34187e2aeac607a340, type: 2}
+  - {fileID: 190464, guid: 7c6547dab8d338e4d811e7c429de7e73, type: 2}
+  - {fileID: 190464, guid: bc4c73bda70f89c4c83e12444082fd27, type: 2}
+  - {fileID: 190464, guid: 8aea86c7d81443e43b7682eba4fea5c9, type: 2}
   foodSpawnPosition: {fileID: 487128}
   baseTimeBeweenSpawns: 5
   eatingTime: 3
