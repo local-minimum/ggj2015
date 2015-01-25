@@ -29,6 +29,11 @@ public class RoomManager : Singleton<RoomManager> {
 		}
 	}
 
+	public static RoomProperties GetRandomOtherRoom(Romm currentRoom) {
+		IEnumerable<RoomProperties> rooms = Instance.Rooms.Where(r => r!=currentRoom);
+		return rooms[Random.Range(0, rooms.Count())];
+	}
+
 	public static RoomProperties GetRoomClosestTO(Transform place) {
 		return Instance.Rooms.OrderBy(r => Vector2.Distance(r.transform.position, place.position)).FirstOrDefault();
 	}

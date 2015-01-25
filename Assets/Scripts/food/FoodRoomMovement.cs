@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class FoodRoomMovement : MonoBehaviour {
 
@@ -12,6 +12,11 @@ public class FoodRoomMovement : MonoBehaviour {
 	public float torqueFrequency = 2f;
 	public float torqueFactor = 100f;
 
+	public float foodEffectDuration = 1f;
+	bool phasing = false;
+
+	float roomChangingP = 0.2f;
+
 	// Use this for initialization
 	void Start () {
 		room = GetComponentInParent<RoomProperties>();
@@ -20,8 +25,16 @@ public class FoodRoomMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		AddForce();
-		AddTorque();
+		if (ChangeLocation()) {
+
+		} else if (!phasing && room) {
+			AddForce();
+			AddTorque();
+		}
+	}
+
+	bool ChangeLocation() {
+		return roomChangingP * Time.deltaTime < Random.value;
 	}
 
 	void AddForce() {
@@ -36,5 +49,42 @@ public class FoodRoomMovement : MonoBehaviour {
 
 	void AddTorque() {
 		rigidbody2D.AddTorque((Mathf.PerlinNoise(seed * 10f, Level.timeSinceLevelStart * torqueFrequency) - Level.PerlinValue) * torqueFactor);
+	}
+
+	public void GoToStomach() {
+		StartCoroutine(_PhaseOutFood(RoomManager.Instance.stomach.foodPoint));
+	}
+
+	public void GoToRandom() {
+		StartCoroutine(_PhaseOutFood(RoomManager.GetRandomOtherRoom(room.foodPoint)));
+	}
+
+	IEnumerator<WaitForSeconds> _PhaseOutFood(Transform foodTarget) {
+
+		phasing = true;
+		float startTime = Level.timeSinceLevelStart;
+		while (Level.timeSinceLevelStart - startTime < foodEffectDuration) {
+			transform.localScale = Vector3.one * Mathf.Lerp(transform.localScale.sqrMagnitude, 0, (Level.timeSinceLevelStart - startTime) / foodEffectDuration);
+			yield return null;
+		}
+		transform.localScale = Vector3.zero;
+		gameObject.transform.position = foodTarget.position;
+		transform.parent = foodTarget;
+		room = foodTarget.GetComponentInParent<RoomProperties>();
+		gameObject.BroadcastMessage("PhaseInFood", SendMessageOptions.DontRequireReceiver);
+	}
+
+	void PhaseInFood() {
+		StartCoroutine(_PhaseInFood());
+	}
+
+	IEnumerator<WaitForSeconds> _PhaseInFood() {
+		float startTime = Level.timeSinceLevelStart;
+		while (Level.timeSinceLevelStart - startTime < foodEffectDuration) {
+			transform.localScale = Vector3.one * Mathf.Lerp(transform.localScale.sqrMagnitude, 1, (Level.timeSinceLevelStart - startTime) / foodEffectDuration);
+			yield return null;
+		}
+		transform.localScale = Vector3.one;
+		phasing = false;
 	}
 }

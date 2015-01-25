@@ -1318,6 +1318,7 @@ MonoBehaviour:
   foodPoint: {fileID: 863326544}
   swarmHolder: {fileID: 981016397}
   leaderlessCameraPosition: {fileID: 1598293596}
+  mouth: {fileID: 0}
   cameraSize: 30
 --- !u!212 &70234847
 SpriteRenderer:
@@ -20799,6 +20800,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 542883644}
   - 114: {fileID: 542883645}
+  - 95: {fileID: 542883646}
   m_Layer: 0
   m_Name: Mouth
   m_TagString: Untagged
@@ -20830,10 +20832,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fef3dad103186949b7fdc20fa1769a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FoodPrefabs: []
-  foodSpawnPosition: {fileID: 0}
+  FoodPrefabs:
+  - {fileID: 190464, guid: 8cd19584dbf60914ebda957702493f75, type: 2}
+  foodSpawnPosition: {fileID: 1768197538}
   baseTimeBeweenSpawns: 5
+  eatingTime: 3
   spawnTimeVariation: .100000001
+--- !u!95 &542883646
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 542883643}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &548072584
 GameObject:
   m_ObjectHideFlags: 0
@@ -22478,6 +22497,7 @@ MonoBehaviour:
   foodPoint: {fileID: 1855819218}
   swarmHolder: {fileID: 1768081779}
   leaderlessCameraPosition: {fileID: 297070377}
+  mouth: {fileID: 0}
   cameraSize: 30
 --- !u!212 &606302032
 SpriteRenderer:
@@ -37818,6 +37838,10 @@ MonoBehaviour:
   - {fileID: 11430192, guid: 67f39190287ff2e45bba73d3be302225, type: 2}
   - {fileID: 11430192, guid: 59e4269e09256fa4080eb6c85466030b, type: 2}
   - {fileID: 11430192, guid: 2a33336c1fe845b409ebc93e57728858, type: 2}
+  deathByMicrobes: 150
+  deathByFoodCount: 20
+  difficultyAmplifier: 1.10000002
+  difficultySurvivalExpectency: 60
 --- !u!114 &1044409988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37854,6 +37878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b275dce17c83a48758362016888f9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stomach: {fileID: 70234846}
 --- !u!1 &1051404744
 GameObject:
   m_ObjectHideFlags: 0
@@ -55008,6 +55033,7 @@ MonoBehaviour:
   forceFrequency: 1.5
   torqueFrequency: .300000012
   torqueFactor: 5
+  foodEffectDuration: 1
 --- !u!50 &1476388095
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -62027,6 +62053,7 @@ MonoBehaviour:
   foodPoint: {fileID: 284018838}
   swarmHolder: {fileID: 1483908423}
   leaderlessCameraPosition: {fileID: 1119390561}
+  mouth: {fileID: 0}
   cameraSize: 30
 --- !u!212 &1685054411
 SpriteRenderer:
