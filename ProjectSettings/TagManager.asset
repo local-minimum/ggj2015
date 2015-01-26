@@ -40,6 +40,10 @@ TagManager:
   User Layer 30: 
   User Layer 31: 
   m_SortingLayers:
+  - name: SkinBG
+    userID: 5
+    uniqueID: 2657084731
+    locked: 0
   - name: Skin
     userID: 1
     uniqueID: 1469402527

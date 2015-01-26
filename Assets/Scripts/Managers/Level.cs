@@ -5,9 +5,14 @@ using UnityEngine.UI;
 
 public class Level : Singleton<Level> {
 
+	private static string recordTimeKey = "RecordTime";
+	private static string gameOverStr = "Game Over\n\nRecord Time: {0}";
+	private static string gameOverRecordStr = "Game Over\n\nNew Record!";
 	public int maxSwarmersPerType = 500;
 	public Transform dormantSwarmersHolder;
 	public Text clock;
+	public Text gameOverText;
+	public GameObject restartText;
 
 	public List<Swarmer> swarmerTypes = new List<Swarmer>();
 
@@ -21,6 +26,16 @@ public class Level : Singleton<Level> {
 	public float difficultyAmplifier = 1.1f;
 	public float difficultySurvivalExpectency = 60f;
 
+	private bool dead = false;
+	private bool paused = false;
+	private bool started = true;
+
+	private bool playing {
+		get {
+			return started && !paused && !dead;
+		}
+	}
+
 	void Start() {
 		InitEmptySwarmerLists();
 		FindAllExistingSwarmers();
@@ -29,11 +44,43 @@ public class Level : Singleton<Level> {
 
 
 	void Update() {
-		clock.text = string.Format("{0}", Mathf.Round(Level.timeSinceLevelStart));
+
+		if (playing) {
+			clock.text = string.Format("{0}", Mathf.Round(Level.timeSinceLevelStart));
+		}
+
 		if (Input.GetKeyDown(KeyCode.R))
 			Application.LoadLevel(Application.loadedLevelName);
 		if (Input.GetKeyDown(KeyCode.Q))
 			Application.Quit();
+
+		if (fractionOfFoodDeath >= 1 || fractionOfMicrobeDeath >= 1)
+			KillState();
+	}
+
+	void KillState() {
+		Time.timeScale = 0f;
+		int playTime = Mathf.RoundToInt(timeSinceLevelStart);
+		dead = true;
+
+		restartText.SetActive(true);
+
+		if (IsRecord(playTime)) {
+			UpdateRecord(playTime);
+			gameOverText.text = gameOverRecordStr;
+		} else {
+			gameOverText.text = string.Format(gameOverStr, PlayerPrefs.GetInt(recordTimeKey, 0));
+		}
+
+		gameOverText.gameObject.SetActive(true);
+	}
+
+	bool IsRecord(int currentTime) {
+		return PlayerPrefs.GetInt(recordTimeKey, -1) < currentTime;
+	}
+
+	void UpdateRecord(int currentTime) {
+		PlayerPrefs.SetInt(recordTimeKey, currentTime);
 	}
 
 	void InitEmptySwarmerLists() {

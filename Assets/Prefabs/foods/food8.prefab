@@ -141,9 +141,9 @@ MonoBehaviour:
   forceFactor: 500
   forceFrequency: 1.5
   torqueFrequency: .300000012
-  torqueFactor: 5
+  torqueFactor: 1
   foodEffectDuration: 1
-  roomChangingP: .0399999991
+  roomChangingP: .00499999989
 --- !u!114 &11490460
 MonoBehaviour:
   m_ObjectHideFlags: 1

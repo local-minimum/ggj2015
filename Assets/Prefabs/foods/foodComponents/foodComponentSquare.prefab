@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodType: 2
-  startingEnergy: 50
+  startingEnergy: 15
 --- !u!198 &19882486
 ParticleSystem:
   m_ObjectHideFlags: 1
