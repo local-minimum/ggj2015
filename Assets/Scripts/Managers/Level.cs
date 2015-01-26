@@ -49,8 +49,10 @@ public class Level : Singleton<Level> {
 			clock.text = string.Format("{0}", Mathf.Round(Level.timeSinceLevelStart));
 		}
 
-		if (Input.GetKeyDown(KeyCode.R))
+		if (Input.GetKeyDown(KeyCode.R)) {
+			Time.timeScale = 1f;
 			Application.LoadLevel(Application.loadedLevelName);
+		}
 		if (Input.GetKeyDown(KeyCode.Q))
 			Application.Quit();
 
