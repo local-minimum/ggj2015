@@ -7,6 +7,7 @@ public class Mouth : MonoBehaviour {
 	public Transform foodSpawnPosition;
 	public float baseTimeBeweenSpawns = 5f;
 	public float eatingTime = 3f;
+	public AudioSource eatingSound;
 	private Animator anim;
 
 	[Range(0, 1)]
@@ -41,6 +42,7 @@ public class Mouth : MonoBehaviour {
 
 	IEnumerator<WaitForSeconds> AnimateEating(GameObject food) {
 		float startTime = Level.timeSinceLevelStart;
+		eatingSound.Play();
 		while (Level.timeSinceLevelStart - startTime < eatingTime) {
 			food.transform.position = Vector3.Lerp(foodSpawnPosition.transform.position, transform.position, (Level.timeSinceLevelStart - startTime) / eatingTime);
 			yield return null;

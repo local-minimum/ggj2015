@@ -40,6 +40,7 @@ public class Level : Singleton<Level> {
 		InitEmptySwarmerLists();
 		FindAllExistingSwarmers();
 		FillUpWithInactiveSwarmers();
+		Time.timeScale = 1f;
 	}
 
 
