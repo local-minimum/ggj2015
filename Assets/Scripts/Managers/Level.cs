@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class Level : Singleton<Level> {
 
 	private static string recordTimeKey = "RecordTime";
-	private static string gameOverStr = "Game Over\n\nRecord Time: {0}";
-	private static string gameOverRecordStr = "Game Over\n\nNew Record!";
+	private static string gameOverStr = "Game Over\nRecord Time: {0}";
+	private static string gameOverRecordStr = "Game Over\nNew Record!";
 	public int maxSwarmersPerType = 500;
 	public Transform dormantSwarmersHolder;
 	public Text clock;
 	public Text gameOverText;
 	public GameObject restartText;
+	public GameObject creditText;
 
 	public List<Swarmer> swarmerTypes = new List<Swarmer>();
 
@@ -67,6 +68,7 @@ public class Level : Singleton<Level> {
 		dead = true;
 
 		restartText.SetActive(true);
+		creditText.SetActive(true);
 
 		if (IsRecord(playTime)) {
 			UpdateRecord(playTime);
