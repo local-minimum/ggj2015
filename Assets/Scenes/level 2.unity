@@ -14150,11 +14150,11 @@ MonoBehaviour:
   Food: {fileID: 0}
   Microbe: {fileID: 0}
   Circle: {fileID: 21300000, guid: 13db73caff1e5477d9de6b81a0ffb8cb, type: 3}
-  Triangle: {fileID: 21300000, guid: 492cfede4a2c3fe46ba57a1fffef05b9, type: 3}
-  Square: {fileID: 21300000, guid: 8e0752a7e073b449489e4015d39c4bda, type: 3}
-  CircleColor: {r: .448529422, g: .711460471, b: .897058845, a: 1}
-  TriangleColor: {r: .986206889, g: 1, b: 0, a: 1}
-  SquareColor: {r: .904411793, g: .27265355, b: .27265355, a: 1}
+  Triangle: {fileID: 21300000, guid: 8e0752a7e073b449489e4015d39c4bda, type: 3}
+  Square: {fileID: 21300000, guid: 492cfede4a2c3fe46ba57a1fffef05b9, type: 3}
+  CircleColor: {r: .573529422, g: .664705873, b: 1, a: 1}
+  TriangleColor: {r: 1, g: .988235295, b: .573529422, a: 1}
+  SquareColor: {r: 1, g: .573529422, b: .670588255, a: 1}
 --- !u!1 &1744189565
 GameObject:
   m_ObjectHideFlags: 0
