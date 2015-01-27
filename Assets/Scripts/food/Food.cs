@@ -6,6 +6,9 @@ public class Food : MonoBehaviour {
 
 	public List<FoodComponent> foodComponents = new List<FoodComponent>();
 	public List<Transform> foodComponentPositions = new List<Transform>();
+	public List<AudioClip> eatingSounds = new List<AudioClip>();
+	[Range(0, 1)]
+	public float eatVolume = 0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -52,8 +55,10 @@ public class Food : MonoBehaviour {
 
 	public void Eat(Swarmer.SwarmerTypes foodType, float biteSize) {
 		FoodComponent foodComponent = getFirstNonDepletedComponent(foodType);
-		if (foodComponent)
+		if (foodComponent) {
 			foodComponent.Eat(biteSize);
+			audio.PlayOneShot(eatingSounds[Random.Range(0, eatingSounds.Count() - 1)], eatVolume);
+		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {

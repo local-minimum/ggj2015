@@ -44,6 +44,7 @@ GameObject:
   - 114: {fileID: 11457592}
   - 58: {fileID: 5871498}
   - 58: {fileID: 5871496}
+  - 82: {fileID: 8266694}
   m_Layer: 10
   m_Name: food6
   m_TagString: Untagged
@@ -126,6 +127,64 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: 1.00999999
   m_Center: {x: -.119999997, y: -.319999993}
+--- !u!82 &8266694
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190464}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &11457592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -161,6 +220,13 @@ MonoBehaviour:
   foodComponentPositions:
   - {fileID: 490460}
   - {fileID: 490462}
+  eatingSounds:
+  - {fileID: 8300000, guid: 4852f2eafae9c3b4292222e8437b6a4c, type: 3}
+  - {fileID: 8300000, guid: 0b7c4f1e0dee0034ebde90b41a32833b, type: 3}
+  - {fileID: 8300000, guid: 4ae75cfa4791c1741b08a24f1e681ccc, type: 3}
+  - {fileID: 8300000, guid: 1bdb5011e7e18f2498da14518ab38925, type: 3}
+  - {fileID: 8300000, guid: fc4a2d061ab48954196488668b7a4fc5, type: 3}
+  eatVolume: .300000012
 --- !u!212 &21290460
 SpriteRenderer:
   m_ObjectHideFlags: 1

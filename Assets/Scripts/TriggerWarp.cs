@@ -35,6 +35,7 @@ public class TriggerWarp : MonoBehaviour {
 		if (swarmer) {
 			if(swarmer == SwarmLeaderController.Leader)
 			{
+				warpMidpoint.audio.Play();
 				TransferSwarmer(swarmer, RelativeDist);
 				TransferCamera();
 				RoomManager.currentRoom = DestinationRoom;
