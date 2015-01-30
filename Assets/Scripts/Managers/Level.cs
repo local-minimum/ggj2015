@@ -61,6 +61,8 @@ public class Level : Singleton<Level> {
 			Application.LoadLevel(Application.loadedLevelName);
 		} else if (Input.GetKeyDown(KeyCode.Q))
 			Application.Quit();
+		else if (Input.GetKey(KeyCode.C) && Input.GetKey(KeyCode.L))
+			PlayerPrefs.DeleteAll();
 		else if (Input.GetButtonDown("Pause"))
 			TogglePause();
 
