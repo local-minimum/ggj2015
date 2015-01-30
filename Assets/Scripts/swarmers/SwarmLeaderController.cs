@@ -24,13 +24,18 @@ public class SwarmLeaderController : Singleton<SwarmLeaderController> {
 		Vector2 force;
 
 		if (_leader) {
-			if (Input.GetMouseButton(0)) {
-				force = (Level.pointerPositionInWorld - (Vector2) leader.transform.position).normalized;
-			} else
-				force = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-			_leader.AddForceLeader(force * Time.deltaTime * forceFactor);
-		}
+			if (Input.GetButtonDown("Deselect Leader"))
+				RemoveMeFromPower(_leader);
+			else {
+				if (Input.GetButton("Select Leader")) 
+					force = (Level.pointerPositionInWorld - (Vector2) leader.transform.position).normalized;
+				else
+					force = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+				_leader.AddForceLeader(force * Time.deltaTime * forceFactor);
 
+			}
+
+		}
 	}
 
 	public static void SetLeader(Swarmer usurper) {

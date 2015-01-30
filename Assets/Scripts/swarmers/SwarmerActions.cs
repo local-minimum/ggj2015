@@ -18,13 +18,12 @@ public class SwarmerActions : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (hovering && Input.GetButtonDown("Fire1"))
+		if (hovering && Input.GetButtonDown("Select Leader"))
 			SwarmLeaderController.SetLeader(swarmer);
 	}
 
 	void OnMouseEnter() {
 		hovering = true;
-//		Debug.Log(string.Format("{0} is hovered", gameObject));
 	}
 
 	void OnMouseExit() {
