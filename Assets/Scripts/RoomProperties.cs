@@ -12,6 +12,7 @@ public class RoomProperties : MonoBehaviour {
 	private Inflammation inflammation;
 	private HashSet<Swarmer> swarm = new HashSet<Swarmer>();
 	public float cameraSize = 30f;
+	private HashSet<GameObject> foods = new HashSet<GameObject>();
 
 	void Start () {
 		inflammation = GetComponent<Inflammation>();
@@ -67,7 +68,17 @@ public class RoomProperties : MonoBehaviour {
 
 	public bool hasFood {
 		get {
-			return foodPoint.childCount > 0;
+			return foods.Any(f => f.activeSelf);
 		}
+	}
+
+	public void AddFood(GameObject food) {
+		foods.Add (food);
+		food.transform.position = foodPoint.position;
+		food.transform.parent = foodPoint;
+	}
+
+	public void RemoveFood(GameObject food) {
+		foods.Remove(food);
 	}
 }

@@ -61,7 +61,7 @@ public class MapRoom : MonoBehaviour {
 			SwarmLeaderController.SetLeader(null);
 			RoomManager.currentRoom = ClosestRoom;
 			Level.mainCameraControl.MoveCameraTo(moveTo, camSize, moveSpeed);
-			print(RoomManager.currentRoom);
+//			print(RoomManager.currentRoom);
 		//}
 
 		print(RoomManager.currentRoom);
@@ -70,7 +70,7 @@ public class MapRoom : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		print(ClosestRoom);
+//		print(ClosestRoom);
 		if(RoomManager.Instance.roomsWithFood.Contains(ClosestRoom))
 		{
 			Food.enabled = true;

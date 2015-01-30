@@ -52,15 +52,15 @@ public class FoodRoomMovement : MonoBehaviour {
 	}
 
 	public void GoToStomach() {
-		StartCoroutine(_PhaseOutFood(RoomManager.Instance.stomach.foodPoint));
+		StartCoroutine(_PhaseOutFood(RoomManager.Instance.stomach));
 	}
 
 	public void GoToRandom() {
 
-		StartCoroutine(_PhaseOutFood(RoomManager.GetRandomOtherRoom(room).foodPoint));
+		StartCoroutine(_PhaseOutFood(RoomManager.GetRandomOtherRoom(room)));
 	}
 
-	IEnumerator<WaitForSeconds> _PhaseOutFood(Transform foodTarget) {
+	IEnumerator<WaitForSeconds> _PhaseOutFood(RoomProperties foodTarget) {
 
 		phasing = true;
 		float startTime = Level.timeSinceLevelStart;
@@ -69,9 +69,10 @@ public class FoodRoomMovement : MonoBehaviour {
 			yield return null;
 		}
 		transform.localScale = Vector3.zero;
-		gameObject.transform.position = foodTarget.position;
-		transform.parent = foodTarget;
-		room = foodTarget.GetComponentInParent<RoomProperties>();
+		if (room)
+			room.RemoveFood(gameObject);
+		foodTarget.AddFood(gameObject);
+		room = foodTarget;
 		gameObject.BroadcastMessage("PhaseInFood", SendMessageOptions.DontRequireReceiver);
 	}
 
