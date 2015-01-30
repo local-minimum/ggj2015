@@ -13,11 +13,11 @@ public class Mouth : MonoBehaviour {
 	[Range(0, 1)]
 	public float spawnTimeVariation = 0.1f;
 
-	private float nextSpawn;
+	private float nextSpawn = 2f;
 
 	// Use this for initialization
 	void Start () {
-		SetNextSpawnTime();
+//		SetNextSpawnTime();
 	}
 	
 	// Update is called once per frame

@@ -8,12 +8,15 @@ public class Level : Singleton<Level> {
 	private static string recordTimeKey = "RecordTime";
 	private static string gameOverStr = "Game Over\nRecord Time: {0}";
 	private static string gameOverRecordStr = "Game Over\nNew Record!";
+	private static string firstPlay = "FirstPlay";
+
 	public int maxSwarmersPerType = 500;
 	public Transform dormantSwarmersHolder;
 	public Text clock;
 	public Text gameOverText;
 	public GameObject restartText;
 	public GameObject creditText;
+	public GameObject helpImage;
 
 	public List<Swarmer> swarmerTypes = new List<Swarmer>();
 
@@ -42,6 +45,8 @@ public class Level : Singleton<Level> {
 		FindAllExistingSwarmers();
 		FillUpWithInactiveSwarmers();
 		Time.timeScale = 1f;
+		if (PlayerPrefs.GetInt(firstPlay, 0) == 0)
+			TogglePause();
 	}
 
 
@@ -54,12 +59,22 @@ public class Level : Singleton<Level> {
 		if (Input.GetKeyDown(KeyCode.R)) {
 			Time.timeScale = 1f;
 			Application.LoadLevel(Application.loadedLevelName);
-		}
-		if (Input.GetKeyDown(KeyCode.Q))
+		} else if (Input.GetKeyDown(KeyCode.Q))
 			Application.Quit();
+		else if (Input.GetButtonDown("Pause"))
+			TogglePause();
 
 		if (fractionOfFoodDeath >= 1 || fractionOfMicrobeDeath >= 1)
 			KillState();
+	}
+
+	void TogglePause() {
+		restartText.SetActive(!paused);
+		helpImage.SetActive(!paused);
+		Time.timeScale = paused ? 1 : 0;
+		PlayerPrefs.SetInt(firstPlay, 1);
+		paused = !paused;
+
 	}
 
 	void KillState() {

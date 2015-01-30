@@ -54,13 +54,13 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Fire2
+    m_Name: Pause
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left alt
+    positiveButton: p
     altNegativeButton: 
-    altPositiveButton: mouse 1
+    altPositiveButton: pause
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
