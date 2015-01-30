@@ -841,7 +841,7 @@ MonoBehaviour:
   - {fileID: 1178883731}
   - {fileID: 714809389}
   inflamationTypes: 000000000100000002000000
-  averageBetweenInflammationTime: 30
+  averageBetweenInflammationTime: 60
   betweenInflammationTimeVariation: 10
   swarmerDuplicationP: .0299999993
   spontaneousGenerationP: .600000024
